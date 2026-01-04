@@ -36,3 +36,7 @@ coverage/
 
 # Optional: lockfiles for other package managers
 *.lock
+
+#next 
+.next/
+next-env.d.ts

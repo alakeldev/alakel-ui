@@ -9,16 +9,17 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev",
+    "dev": "concurrently \"npm:dev:ui\" \"npm:dev:web\"",
+    "dev:ui": "cd packages/ui && npm run dev",
+    "dev:web": "cd apps/web && npm run dev",
     "build": "turbo run build",
-    "lint": "biome lint",
+    "lint": "biome check",
     "format": "biome format --write",
-    "check": "biome check",
-    "typecheck": "turbo run typecheck",
-    "update:interactive": "npx npm-check-updates -i"
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
+    "concurrently": "^9.2.1",
     "npm-check-updates": "^19.2.1",
     "prettier": "^3.7.4",
     "sass": "^1.97.1",

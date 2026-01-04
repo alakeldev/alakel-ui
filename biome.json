@@ -1,0 +1,34 @@
+{
+  "$schema": "https://biomejs.dev/schemas/latest/schema.json",
+  "files": {
+    "includes": [
+      "**",
+      "!dist",
+      "!build",
+      "!.next",
+      "!node_modules"
+    ]
+  },
+  "linter": {
+    "enabled": true,
+    "includes": [
+      "packages/**/*.{ts,tsx}",
+      "apps/**/*.{ts,tsx}",
+      "!**/dist/**",
+      "!**/build/**",
+      "!**/.next/**",
+      "!**/node_modules/**"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "includes": [
+      "packages/**/*.{ts,tsx}",
+      "apps/**/*.{ts,tsx,js,jsx}",
+      "!**/dist/**",
+      "!**/build/**",
+      "!**/.next/**",
+      "!**/node_modules/**"
+    ]
+  }
+}

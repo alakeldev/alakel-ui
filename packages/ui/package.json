@@ -13,21 +13,18 @@
     "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
     "dev": "tsup src/index.ts --watch --format esm,cjs --dts --out-dir dist",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src --ext .ts,.tsx",
-    "check": "npm run lint && npm run typecheck && npm run build"
+    "lint": "biome lint",
+    "format": "biome format --write",
+    "check": "biome check",
+    "check-types": "npm run typecheck"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.3",
     "@types/react-dom": "^19.2.3",
-    "@typescript-eslint/eslint-plugin": "^8.51.0",
-    "@typescript-eslint/parser": "^8.51.0",
-    "eslint": "^9.39.2",
-    "execa": "^7.1.1",
-    "globby": "^13.2.0",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }

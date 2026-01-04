@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "packageManager": "npm@11.6.1",
+  "packageManager": "npm@11.7.0",
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -11,19 +11,14 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "lint": "turbo run lint",
+    "lint": "biome lint",
+    "format": "biome format --write",
+    "check": "biome check",
     "typecheck": "turbo run typecheck",
-    "check": "npm run lint && npm run typecheck && npm run build",
     "update:interactive": "npx npm-check-updates -i"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
-    "@typescript-eslint/eslint-plugin": "^8.51.0",
-    "@typescript-eslint/parser": "^8.51.0",
-    "eslint": "^9.39.2",
-    "eslint-config-next": "^16.1.1",
-    "execa": "^7.1.1",
-    "globby": "^13.2.0",
+    "@biomejs/biome": "2.3.11",
     "npm-check-updates": "^19.2.1",
     "prettier": "^3.7.4",
     "sass": "^1.97.1",

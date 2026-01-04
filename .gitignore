@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# TurboRepo cache
+.turbo/
+.cache/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# macOS system files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# VSCode
+.vscode/
+
+# TypeScript
+*.tsbuildinfo
+
+# Jest / testing
+coverage/
+
+# Optional: lockfiles for other package managers
+*.lock

@@ -1,7 +1,14 @@
 {
 	"$schema": "https://biomejs.dev/schemas/latest/schema.json",
 	"files": {
-		"includes": ["**", "!**/dist", "!**/build", "!**/.next", "!**/node_modules"]
+		"includes": [
+			"**",
+			"!**/dist",
+			"!**/build",
+			"!**/.next",
+			"!**/node_modules",
+			"!**/coverage"
+		]
 	},
 	"linter": {
 		"enabled": true,
@@ -11,7 +18,8 @@
 			"!**/dist/**",
 			"!**/build/**",
 			"!**/.next/**",
-			"!**/node_modules/**"
+			"!**/node_modules/**",
+			"!**/coverage/**"
 		]
 	},
 	"formatter": {
@@ -22,7 +30,8 @@
 			"!**/dist/**",
 			"!**/build/**",
 			"!**/.next/**",
-			"!**/node_modules/**"
+			"!**/node_modules/**",
+			"!**/coverage/**"
 		]
 	}
 }

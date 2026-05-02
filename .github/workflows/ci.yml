@@ -50,7 +50,7 @@ jobs:
         run: npm run build:packages
       
       - name: Run tests
-        run: npm run jest:test:packages
+        run: npm run jest:test
       
       - name: Upload coverage
         uses: codecov/codecov-action@v4

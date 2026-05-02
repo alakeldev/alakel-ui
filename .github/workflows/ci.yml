@@ -97,10 +97,10 @@ jobs:
       
       - name: Test Docker containers
         run: |
-          npm run docker:up
+          npm run docker:start
           sleep 10
           docker ps
-          npm run docker:down
+          npm run docker:stop
 
   docker-test:
     name: Docker Test Container

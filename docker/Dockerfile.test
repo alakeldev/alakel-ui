@@ -19,8 +19,8 @@ COPY jest.setup.cjs ./
 COPY packages ./packages
 COPY apps ./apps
 
-# Install dependencies
-RUN npm install
+# Install dependencies (skip prepare scripts since no git in Docker)
+RUN npm ci --legacy-peer-deps --ignore-scripts
 
 # Build packages (required for tests)
 RUN npm run build:packages

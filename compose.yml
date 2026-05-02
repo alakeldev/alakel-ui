@@ -2,7 +2,7 @@ services:
   # Build packages first (dependency for apps)
   packages:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile.dev
     container_name: alakel-packages
     command: npm run dev:packages
@@ -10,7 +10,7 @@ services:
   # Documentation site
   docs:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile.dev
     container_name: alakel-docs
     ports:
@@ -22,7 +22,7 @@ services:
   # Interactive playground
   playground:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile.dev
     container_name: alakel-playground
     ports:

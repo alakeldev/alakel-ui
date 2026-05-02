@@ -22,5 +22,5 @@ RUN npm run build:packages
 # Expose application ports
 EXPOSE 3001 3002
 
-# Default command (overridden by docker-compose)
+# Default command (overridden by compose.yml)
 CMD ["npm", "run", "dev"]

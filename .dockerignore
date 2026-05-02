@@ -1,0 +1,18 @@
+# Docker ignore file - prevents unnecessary files from being sent to Docker context
+node_modules
+npm-debug.log
+.next
+.turbo
+dist
+build
+.git
+.gitignore
+.env
+.env.local
+.DS_Store
+*.log
+coverage
+.vscode
+.idea
+README.md
+.github

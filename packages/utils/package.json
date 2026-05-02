@@ -1,0 +1,29 @@
+{
+  "name": "@alakel-ui/utils",
+  "version": "0.1.0",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
+    "dev": "tsup src/index.ts --watch --format esm,cjs --dts --out-dir dist",
+    "test": "jest --config ../../jest.config.cjs --rootDir=../.. --testMatch='**/packages/utils/**/*.test.{ts,tsx}'",
+    "test:watch": "jest --config ../../jest.config.cjs --rootDir=../.. --testMatch='**/packages/utils/**/*.test.{ts,tsx}' --watch",
+    "test:coverage": "jest --config ../../jest.config.cjs --rootDir=../.. --testMatch='**/packages/utils/**/*.test.{ts,tsx}' --coverage",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}

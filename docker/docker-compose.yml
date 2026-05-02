@@ -1,0 +1,44 @@
+services:
+  # Documentation site
+  docs:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: alakel-docs
+    ports:
+      - "3001:3001"
+    command: npm run dev:docs
+    environment:
+      - NODE_ENV=development
+    networks:
+      - alakel-network
+
+  # Interactive playground
+  playground:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: alakel-playground
+    ports:
+      - "3002:3002"
+    command: npm run dev:playground
+    environment:
+      - NODE_ENV=development
+    networks:
+      - alakel-network
+
+  # Package builder (watches and rebuilds on changes)
+  packages:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: alakel-packages
+    command: npm run dev:packages
+    environment:
+      - NODE_ENV=development
+    networks:
+      - alakel-network
+
+networks:
+  alakel-network:
+    driver: bridge

@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "incremental": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@alakel-ui/button": ["../../packages/button/src"],
+      "@alakel-ui/card": ["../../packages/card/src"],
+      "@alakel-ui/label": ["../../packages/label/src"],
+      "@alakel-ui/utils": ["../../packages/utils/src"]
+    }
+  },
+  "include": [
+    "app/**/*",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "../../packages/button/src/**/*",
+    "../../packages/card/src/**/*",
+    "../../packages/label/src/**/*",
+    "../../packages/utils/src/**/*"
+  ],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,29 @@
+# Dockerfile for running tests in isolation
+FROM node:22-alpine
+
+# Install required dependencies
+RUN apk add --no-cache libc6-compat git
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+COPY turbo.json ./
+COPY biome.json ./
+COPY tsconfig.json ./
+COPY jest.config.cjs ./
+COPY jest.setup.cjs ./
+
+# Copy workspace packages
+COPY packages ./packages
+COPY apps ./apps
+
+# Install dependencies
+RUN npm install
+
+# Build packages (required for tests)
+RUN npm run build:packages
+
+# Default command: run tests with coverage
+CMD ["npm", "run", "test:coverage"]

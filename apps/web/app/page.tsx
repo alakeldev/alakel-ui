@@ -1,4 +1,4 @@
-import { Button, Label } from "@alakel-ui/ui";
+import { Button, Label, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@alakel-ui/ui";
 
 export default function HomePage() {
 	return (
@@ -61,6 +61,25 @@ export default function HomePage() {
 							<Button size="lg">Large</Button>
 							<Button size="icon">→</Button>
 						</div>
+					</section>
+
+					{/* Cards section */}
+					<section className="bg-white/5 rounded-lg p-6">
+						<h2 className="text-lg font-semibold text-white mb-4">Card</h2>
+						<Card>
+							<CardHeader>
+								<CardTitle>Card Title</CardTitle>
+								<CardDescription>This is a description.</CardDescription>
+							</CardHeader>
+							<CardContent>
+								<p>Here is some content inside the card.</p>
+							</CardContent>
+							<CardFooter>
+								<Button variant="outline" size="sm">
+									Action
+								</Button>
+							</CardFooter>
+						</Card>
 					</section>
 				</div>
 			</div>

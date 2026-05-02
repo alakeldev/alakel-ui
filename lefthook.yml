@@ -5,18 +5,19 @@ pre-commit:
   parallel: true
   commands:
     lint:
-      run: npm run lint:fix
+      run: npm run biome:fix
       stage_fixed: true
-    format:
-      run: npm run format
+    stylelint:
+      glob: "*.{css,scss}"
+      run: npm run stylelint:fix
       stage_fixed: true
     typecheck:
-      run: npm run typecheck
+      run: npm run tsc:check
 
 pre-push:
   parallel: true
   commands:
     test:
-      run: npm run test
+      run: npm run jest:test
     build:
       run: npm run build:packages

@@ -23,10 +23,13 @@ jobs:
         run: npm ci
       
       - name: Run Biome linter
-        run: npm run lint
+        run: npm run biome:check
+      
+      - name: Run Stylelint
+        run: npm run stylelint:check
       
       - name: Type check
-        run: npm run typecheck
+        run: npm run tsc:check
 
   test:
     name: Test Packages
@@ -47,7 +50,7 @@ jobs:
         run: npm run build:packages
       
       - name: Run tests
-        run: npm run test:packages
+        run: npm run jest:test:packages
       
       - name: Upload coverage
         uses: codecov/codecov-action@v4

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -10,11 +10,7 @@
     "declaration": true,
     "sourceMap": true,
     "jsx": "react-jsx",
-    "types": ["jest", "@testing-library/jest-dom"],
-    "baseUrl": ".",
-    "paths": {
-      "@alakel-ui/ui": ["packages/ui/src"]
-    }
+    "types": ["jest", "@testing-library/jest-dom"]
   },
   "include": ["packages/**/*", "apps/**/*"]
 }

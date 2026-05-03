@@ -8,7 +8,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<head>
-				<title>Alakel UI - Documentation</title>
+				<title>SYR UI - Docs & Playground</title>
 			</head>
 			<body>{children}</body>
 		</html>

@@ -9,10 +9,7 @@
     "isolatedModules": true,
     "plugins": [{ "name": "next" }],
     "paths": {
-      "@alakel-ui/button": ["../../packages/button/src"],
-      "@alakel-ui/card": ["../../packages/card/src"],
-      "@alakel-ui/label": ["../../packages/label/src"],
-      "@alakel-ui/utils": ["../../packages/utils/src"]
+      "@syr-ui/*": ["../../packages/*/src"]
     }
   },
   "include": [
@@ -20,10 +17,7 @@
     "pages/**/*",
     "next-env.d.ts",
     ".next/types/**/*.ts",
-    "../../packages/button/src/**/*",
-    "../../packages/card/src/**/*",
-    "../../packages/label/src/**/*",
-    "../../packages/utils/src/**/*"
+    "../../packages/*/src/**/*"
   ],
   "exclude": ["node_modules"]
 }

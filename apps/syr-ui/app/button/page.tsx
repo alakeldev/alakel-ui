@@ -1,4 +1,4 @@
-import { Button } from "@alakel-ui/button";
+import { Button } from "@syr-ui/button";
 import Link from "next/link";
 
 export default function ButtonDocsPage() {
@@ -21,7 +21,7 @@ export default function ButtonDocsPage() {
 						Flexible button component with multiple variants and sizes
 					</p>
 					<code className="text-sm text-purple-400 bg-black/30 px-3 py-1 rounded">
-						@alakel-ui/button
+						@syr-ui/button
 					</code>
 				</header>
 
@@ -31,7 +31,7 @@ export default function ButtonDocsPage() {
 						Installation
 					</h2>
 					<div className="bg-black/50 rounded p-4 font-mono text-sm text-green-400">
-						npm install @alakel-ui/button
+						npm install @syr-ui/button
 					</div>
 				</section>
 
@@ -39,7 +39,7 @@ export default function ButtonDocsPage() {
 				<section className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 mb-8">
 					<h2 className="text-2xl font-semibold text-white mb-4">Usage</h2>
 					<div className="bg-black/50 rounded p-4 font-mono text-sm text-green-400 mb-4">
-						{`import { Button } from "@alakel-ui/button";
+						{`import { Button } from "@syr-ui/button";
 
 export default function App() {
   return <Button>Click me</Button>;

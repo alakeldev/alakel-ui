@@ -1,18 +1,41 @@
 # Docker ignore file - prevents unnecessary files from being sent to Docker context
+# This speeds up docker build by reducing context size
+
+# Dependencies (installed inside container)
 node_modules
-npm-debug.log
+
+# Build outputs (built inside container)
 .next
 .turbo
 dist
-build
+coverage
+
+# Development files
+npm-debug.log
+*.log
+.DS_Store
+
+# Git
 .git
 .gitignore
+.github
+
+# Environment
 .env
 .env.local
-.DS_Store
-*.log
-coverage
+.env*.local
+
+# Editor configs
 .vscode
 .idea
+
+# Documentation (not needed in container)
 README.md
-.github
+
+# Test files (not needed for dev container)
+lefthook.yml
+jest.config.cjs
+jest.setup.cjs
+**/__tests__
+**/*.test.ts
+**/*.test.tsx

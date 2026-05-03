@@ -1,6 +1,6 @@
 {
-  "name": "docs",
-  "version": "0.1.0",
+  "name": "syr-ui",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,10 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@alakel-ui/button": "*",
-    "@alakel-ui/card": "*",
-    "@alakel-ui/label": "*",
-    "@alakel-ui/utils": "*",
+    "@syr-ui/button": "1.0.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },

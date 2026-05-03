@@ -6,11 +6,17 @@
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
     "skipLibCheck": true,
+    "noImplicitReturns": true,
     "declaration": true,
     "sourceMap": true,
     "jsx": "react-jsx",
-    "types": ["jest", "@testing-library/jest-dom"]
+    "types": ["jest", "@testing-library/jest-dom"],
+    "paths": {
+      "@syr-ui/*": ["./packages/*/src"]
+    }
   },
   "include": ["packages/**/*", "apps/**/*"]
 }

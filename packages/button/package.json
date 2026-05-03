@@ -1,6 +1,6 @@
 {
-  "name": "@alakel-ui/button",
-  "version": "0.1.0",
+  "name": "@syr-ui/button",
+  "version": "1.0.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -10,7 +10,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
+    "build": "tsup src/index.ts --format esm,cjs --dts --external @syr-ui/utils --out-dir dist",
     "dev": "tsup src/index.ts --watch --format esm,cjs --dts --out-dir dist",
     "test": "jest --config ../../jest.config.cjs --rootDir=../.. --testMatch='**/packages/button/**/*.test.{ts,tsx}'",
     "test:watch": "jest --config ../../jest.config.cjs --rootDir=../.. --testMatch='**/packages/button/**/*.test.{ts,tsx}' --watch",
@@ -23,7 +23,7 @@
     "react-dom": "^19.2.3"
   },
   "dependencies": {
-    "@alakel-ui/utils": "*",
+    "@syr-ui/utils": "*",
     "@base-ui/react": "^1.4.1",
     "class-variance-authority": "^0.7.1"
   },

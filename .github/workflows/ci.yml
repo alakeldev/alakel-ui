@@ -113,7 +113,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
       
       - name: Build test Docker image
-        run: docker build -f docker/Dockerfile.test -t alakel-ui-test .
+        run: docker build -f docker/Dockerfile.test -t syr-ui-test .
       
       - name: Run tests in Docker
-        run: docker run --rm alakel-ui-test
+        run: docker run --rm syr-ui-test

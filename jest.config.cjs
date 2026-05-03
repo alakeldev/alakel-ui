@@ -13,7 +13,7 @@ module.exports = {
   coverageReporters: ['text', 'lcov', 'html'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.cjs'],
   moduleNameMapper: {
-    '^@alakel-ui/(.*)$': '<rootDir>/packages/$1/src',
+    '^@syr-ui/(.*)$': '<rootDir>/packages/$1/src',
   },
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {

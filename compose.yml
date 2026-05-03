@@ -1,32 +1,10 @@
 services:
-  # Build packages first (dependency for apps)
-  packages:
+  # UI Website (Docs with integrated Playground)
+  syr-ui:
     build:
       context: .
       dockerfile: docker/Dockerfile.dev
-    container_name: alakel-packages
-    command: npm run dev:packages
-
-  # Documentation site
-  docs:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.dev
-    container_name: alakel-docs
+    container_name: syr-ui
     ports:
       - "3001:3001"
-    command: npm run dev:docs
-    depends_on:
-      - packages
-
-  # Interactive playground
-  playground:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.dev
-    container_name: alakel-playground
-    ports:
-      - "3002:3002"
-    command: npm run dev:playground
-    depends_on:
-      - packages
+    command: npm run dev:syr-ui

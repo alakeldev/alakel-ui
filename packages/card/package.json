@@ -1,5 +1,5 @@
 {
-  "name": "@alakel-ui/card",
+  "name": "@syr-ui/card",
   "version": "0.1.0",
   "private": false,
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
+    "build": "tsup src/index.ts --format esm,cjs --dts --external @syr-ui/utils --out-dir dist",
     "dev": "tsup src/index.ts --watch --format esm,cjs --dts --out-dir dist",
     "test": "jest --config ../../jest.config.cjs --rootDir=../.. --testMatch='**/packages/card/**/*.test.{ts,tsx}' --passWithNoTests",
     "test:watch": "jest --config ../../jest.config.cjs --rootDir=../.. --testMatch='**/packages/card/**/*.test.{ts,tsx}' --watch --passWithNoTests",
@@ -23,7 +23,7 @@
     "react-dom": "^19.2.3"
   },
   "dependencies": {
-    "@alakel-ui/utils": "*"
+    "@syr-ui/utils": "*"
   },
   "devDependencies": {
     "@types/react": "^19.2.3",

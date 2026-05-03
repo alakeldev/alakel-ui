@@ -1,4 +1,4 @@
-import { cn } from "@alakel-ui/utils";
+import { cn } from "@syr-ui/utils";
 import type * as React from "react";
 
 function Card({

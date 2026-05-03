@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@alakel-ui/utils";
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
+import { cn } from "@syr-ui/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const buttonVariants = cva(

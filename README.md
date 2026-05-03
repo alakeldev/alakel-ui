@@ -69,6 +69,7 @@ syr-ui/
 │   ├── button/                  # Button component with variants
 │   ├── card/                    # Card with subcomponents
 │   ├── label/                   # Accessible label component
+│   ├── ...                      # More components coming soon
 │   └── tsconfig.base.json       # 🔥 Dynamic path resolution
 ├── apps/
 │   └── syr-ui/                  # Main app (Docs + Playground)
@@ -76,7 +77,8 @@ syr-ui/
 │       │   ├── page.tsx        # Component gallery
 │       │   ├── button/         # Button demos & examples
 │       │   ├── card/           # Card demos & examples
-│       │   └── label/          # Label demos & examples
+│       │   ├── label/          # Label demos & examples
+│       │   └── ...             # More demos coming soon
 │       ├── next.config.js      # 🔥 Auto-discovers packages
 │       └── package.json        # Runs on port 3001
 ├── docker/

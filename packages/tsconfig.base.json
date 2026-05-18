@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "paths": {
-      "@syr-ui/*": ["../*/src"]
+      "@akex/*": ["../*/src"]
     }
   }
 }

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨 SYR UI
+# 🎨 AKEX
 
 **Modern React Component Library**
 
@@ -25,7 +25,7 @@ A production-ready UI component library built with TypeScript and Tailwind CSS. 
 npm install
 
 # Start development server
-npm run dev:syr-ui       # Runs on http://localhost:3001
+npm run dev:akex       # Runs on http://localhost:3001
 
 # Or use Docker (production-like environment)
 npm run docker:build     # First time only (~52s)
@@ -55,9 +55,9 @@ npm start                # Start container + logs
 ## 📦 Project Structure
 
 ```
-syr-ui/
+akex/
 ├── packages/                    # Independent, publishable components
-│   ├── [package-name]/          # Each package follows the pattern @syr-ui/[name]
+│   ├── [package-name]/          # Each package follows the pattern @akex/[name]
 │   │   ├── src/
 │   │   │   ├── [Component].tsx # Component implementation
 │   │   │   └── index.ts        # Public exports
@@ -72,7 +72,7 @@ syr-ui/
 │   ├── ...                      # More components coming soon
 │   └── tsconfig.base.json       # 🔥 Dynamic path resolution
 ├── apps/
-│   └── syr-ui/                  # Main app (Docs + Playground)
+│   └── akex/                  # Main app (Docs + Playground)
 │       ├── app/
 │       │   ├── page.tsx        # Component gallery
 │       │   ├── button/         # Button demos & examples
@@ -116,7 +116,7 @@ syr-ui/
 npm install
 
 # Start development server
-npm run dev:syr-ui       # SYR UI app on port 3001
+npm run dev:akex       # AKEX app on port 3001
 
 # Access the app
 # http://localhost:3001 - Component documentation + playground
@@ -376,7 +376,7 @@ File: `.github/workflows/ci.yml`
 
 3. **build** (requires lint + test)
    - Build all packages
-   - Build all apps (syr-ui)
+   - Build all apps (akex)
 
 4. **docker-test** (parallel)
    - Build test Docker image
@@ -398,7 +398,7 @@ File: `.github/workflows/ci.yml`
 Add to your README to show build status:
 
 ```markdown
-[![CI/CD](https://github.com/alakeldev/syr-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/alakeldev/syr-ui/actions/workflows/ci.yml)
+[![CI/CD](https://github.com/alakeldev/akex/actions/workflows/ci.yml/badge.svg)](https://github.com/alakeldev/akex/actions/workflows/ci.yml)
 ```
 
 ### Lefthook vs CI/CD
@@ -472,9 +472,9 @@ RUN npm run build:packages
 - **Output:** Coverage reports
 
 #### **compose.yml**
-- **Services:** syr-ui (port 3001)
+- **Services:** akex (port 3001)
 - **Network:** Internal communication
-- **Command:** `npm run dev:syr-ui`
+- **Command:** `npm run dev:akex`
 
 #### **.dockerignore**
 - **Purpose:** Reduces build context from ~500MB to ~5MB
@@ -498,7 +498,7 @@ npm run docker:test:run      # Run tests in container
 
 # Monitoring
 docker ps                    # List running containers
-docker logs syr-ui           # View logs
+docker logs akex           # View logs
 
 # Cleanup
 npm run docker:down          # Stop and remove
@@ -516,7 +516,7 @@ docker system prune          # Clean unused resources
 #### **Root tsconfig.json**
 ```json
 "paths": {
-  "@syr-ui/*": ["./packages/*/src"]  // Wildcard matches ALL packages
+  "@akex/*": ["./packages/*/src"]  // Wildcard matches ALL packages
 }
 ```
 
@@ -527,19 +527,19 @@ docker system prune          # Clean unused resources
   "compilerOptions": {
     "outDir": "dist",
     "paths": {
-      "@syr-ui/*": ["../*/src"]  // Auto-discovers sibling packages
+      "@akex/*": ["../*/src"]  // Auto-discovers sibling packages
     }
   }
 }
 ```
 
-#### **apps/syr-ui/next.config.js**
+#### **apps/akex/next.config.js**
 ```javascript
 const packages = fs.readdirSync(packagesDir)
   .filter(name => fs.statSync(path.join(packagesDir, name)).isDirectory());
 
 // Auto-generates:
-// - transpilePackages: ["@syr-ui/[package]", ...]
+// - transpilePackages: ["@akex/[package]", ...]
 // - webpack aliases for all packages
 ```
 
@@ -550,7 +550,7 @@ const packages = fs.readdirSync(packagesDir)
 ### Package Discovery
 
 All packages in `packages/` are automatically:
-- Published to npm with the `@syr-ui/*` namespace
+- Published to npm with the `@akex/*` namespace
 - Discovered by Next.js transpiler
 - Resolved via TypeScript path mappings
 - Available to import in the main app
@@ -598,7 +598,7 @@ mkdir packages/my-component
 
 # 2. Add minimal package.json
 {
-  "name": "@syr-ui/my-component",
+  "name": "@akex/my-component",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -619,7 +619,7 @@ mkdir packages/my-component/src
 echo "export const MyComponent = () => <div>Hello</div>;" > packages/my-component/src/index.tsx
 
 # 5. Done! Auto-discovered everywhere:
-# - Import: import { MyComponent } from "@syr-ui/my-component"
+# - Import: import { MyComponent } from "@akex/my-component"
 # - next.config.js finds it automatically
 # - TypeScript resolves it via wildcard paths
 # - Jest tests work without config changes
@@ -669,7 +669,7 @@ Visual test coverage reports:
 Add to top of README:
 
 ```markdown
-[![CI/CD](https://github.com/alakeldev/syr-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/alakeldev/syr-ui/actions/workflows/ci.yml)
+[![CI/CD](https://github.com/alakeldev/akex/actions/workflows/ci.yml/badge.svg)](https://github.com/alakeldev/akex/actions/workflows/ci.yml)
 ```
 
 **Benefit:** Show build status to visitors
@@ -681,7 +681,7 @@ Add to top of README:
 git add .
 
 # Commit (Lefthook runs: lint, format, typecheck)
-git commit -m "feat: initial syr-ui framework setup"
+git commit -m "feat: initial akex framework setup"
 
 # Push (Lefthook runs: test, build, then GitHub Actions triggers)
 git push origin main
@@ -698,7 +698,7 @@ git push origin main
 
 ```bash
 # Local development (hot-reload)
-npm run dev:syr-ui       # SYR UI app (port 3001)
+npm run dev:akex       # AKEX app (port 3001)
 npm run dev:packages     # Watch packages for changes
 
 # Docker development (production-like)
@@ -974,8 +974,8 @@ We welcome contributions! Here's how to get started:
 1. **Fork** the repository on GitHub
 2. **Clone** your fork locally:
    ```bash
-   git clone https://github.com/alakeldev/syr-ui.git
-   cd syr-ui
+   git clone https://github.com/alakeldev/akex.git
+   cd akex
    ```
 3. **Install** dependencies:
    ```bash
@@ -983,7 +983,7 @@ We welcome contributions! Here's how to get started:
    ```
 4. **Start** the development server:
    ```bash
-   npm run dev:syr-ui
+   npm run dev:akex
    ```
 
 ### Making Changes
@@ -1072,4 +1072,4 @@ MIT License - feel free to use this in your projects!
 
 ---
 
-**SYR UI** - Production-ready React component library
+**AKEX** - Production-ready React component library

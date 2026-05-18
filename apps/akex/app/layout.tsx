@@ -8,7 +8,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<head>
-				<title>SYR UI - Docs & Playground</title>
+				<title>AKEX - Docs & Playground</title>
 			</head>
 			<body>{children}</body>
 		</html>

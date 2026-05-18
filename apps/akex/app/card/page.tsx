@@ -1,4 +1,4 @@
-import { Button } from "@syr-ui/button";
+import { Button } from "@akex/button";
 import {
 	Card,
 	CardAction,
@@ -7,7 +7,7 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@syr-ui/card";
+} from "@akex/card";
 import Link from "next/link";
 
 export default function CardDocsPage() {
@@ -30,7 +30,7 @@ export default function CardDocsPage() {
 						Flexible card container with header, content, and footer sections
 					</p>
 					<code className="text-sm text-purple-400 bg-black/30 px-3 py-1 rounded">
-						@syr-ui/card
+						@akex/card
 					</code>
 				</header>
 
@@ -40,7 +40,7 @@ export default function CardDocsPage() {
 						Installation
 					</h2>
 					<div className="bg-black/50 rounded p-4 font-mono text-sm text-green-400">
-						npm install @syr-ui/card
+						npm install @akex/card
 					</div>
 				</section>
 
@@ -48,7 +48,7 @@ export default function CardDocsPage() {
 				<section className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 mb-8">
 					<h2 className="text-2xl font-semibold text-white mb-4">Usage</h2>
 					<div className="bg-black/50 rounded p-4 font-mono text-sm text-green-400 mb-4">
-						{`import { Card, CardHeader, CardTitle, CardContent } from "@syr-ui/card";
+						{`import { Card, CardHeader, CardTitle, CardContent } from "@akex/card";
 
 export default function App() {
   return (

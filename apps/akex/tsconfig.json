@@ -9,7 +9,7 @@
     "isolatedModules": true,
     "plugins": [{ "name": "next" }],
     "paths": {
-      "@syr-ui/*": ["../../packages/*/src"]
+      "@akex/*": ["../../packages/*/src"]
     }
   },
   "include": [

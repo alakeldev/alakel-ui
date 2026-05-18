@@ -15,7 +15,7 @@ COPY packages/button/package.json ./packages/button/
 COPY packages/card/package.json ./packages/card/
 COPY packages/label/package.json ./packages/label/
 COPY packages/utils/package.json ./packages/utils/
-COPY apps/syr-ui/package.json ./apps/syr-ui/
+COPY apps/akex/package.json ./apps/akex/
 
 # Step 3: Install dependencies - CACHED unless package.json changes
 # Uses npm cache mount for faster reinstalls

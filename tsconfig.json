@@ -15,7 +15,7 @@
     "jsx": "react-jsx",
     "types": ["jest", "@testing-library/jest-dom"],
     "paths": {
-      "@syr-ui/*": ["./packages/*/src"]
+      "@akex/*": ["./packages/*/src"]
     }
   },
   "include": ["packages/**/*", "apps/**/*"]

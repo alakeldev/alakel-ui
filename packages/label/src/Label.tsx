@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@syr-ui/utils";
+import { cn } from "@akex/utils";
 import type * as React from "react";
 
 function Label({ className, ...props }: React.ComponentProps<"label">) {

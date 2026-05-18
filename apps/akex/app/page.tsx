@@ -4,7 +4,7 @@ import {
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "@syr-ui/card";
+} from "@akex/card";
 import Link from "next/link";
 
 const components = [
@@ -13,7 +13,7 @@ const components = [
 		href: "/button",
 		description:
 			"Interactive button component with multiple variants, sizes, and playground",
-		package: "@syr-ui/button",
+		package: "@akex/button",
 		icon: "🔘",
 		color: "from-blue-500/20 to-purple-500/20",
 	},
@@ -22,7 +22,7 @@ const components = [
 		href: "/card",
 		description:
 			"Flexible card container with documentation and interactive demos",
-		package: "@syr-ui/card",
+		package: "@akex/card",
 		icon: "🃏",
 		color: "from-green-500/20 to-teal-500/20",
 	},
@@ -30,7 +30,7 @@ const components = [
 		name: "Label",
 		href: "/label",
 		description: "Accessible label component with examples and playground",
-		package: "@syr-ui/label",
+		package: "@akex/label",
 		icon: "🏷️",
 		color: "from-orange-500/20 to-red-500/20",
 	},
@@ -43,7 +43,7 @@ export default function DocsPage() {
 				{/* Header */}
 				<header className="text-center mb-16">
 					<h1 className="text-6xl font-bold text-white mb-4 animate-pulse">
-						SYR UI 📚🎮
+						AKEX 📚🎮
 					</h1>
 					<p className="text-xl text-gray-300 mb-2">
 						Component Documentation & Interactive Playground

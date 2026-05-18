@@ -1,4 +1,4 @@
-import { cn } from "@syr-ui/utils";
+import { cn } from "@akex/utils";
 import type * as React from "react";
 
 function Card({

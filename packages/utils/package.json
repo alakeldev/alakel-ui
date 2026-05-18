@@ -1,5 +1,5 @@
 {
-  "name": "@syr-ui/utils",
+  "name": "@akex/utils",
   "version": "1.0.0",
   "private": false,
   "main": "dist/index.js",

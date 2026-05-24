@@ -27,7 +27,7 @@
     "build:packages": "turbo run build --filter='./packages/*'",
     "clean": "turbo run clean && rm -rf node_modules",
     "publish:packages": "npm run build:packages && cd packages && npm publish --workspaces",
-    "prepare": "lefthook install"
+    "prepare": "command -v lefthook > /dev/null 2>&1 && lefthook install || true"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",

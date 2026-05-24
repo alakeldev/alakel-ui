@@ -76,7 +76,7 @@ export default function Home() {
 				<p>Built with 💜 using TypeScript, Next.js, React, and Tailwind CSS.</p>
 				<div className="mt-4 flex justify-center">
 					<a
-						href="https://github.com/alakeldev/akex"
+						href="https://github.com/alakeldev"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Visit AKEX on GitHub"

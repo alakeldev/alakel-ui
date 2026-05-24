@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "outputDirectory": "apps/akex/.next"
+  "installCommand": "npm install"
 }

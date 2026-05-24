@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "turbo run build --filter=akex",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "outputDirectory": "apps/akex/.next"
+}

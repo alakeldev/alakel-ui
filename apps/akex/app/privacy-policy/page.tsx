@@ -1,22 +1,13 @@
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@akex/card";
 import Image from "next/image";
 import Link from "next/link";
-import { components } from "./lib/components";
 
-export default function Home() {
+export default function PrivacyPolicy() {
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-slate-900 flex flex-col">
 			{/* Navigation */}
 			<nav className="border-b border-white/10 bg-black">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex items-center justify-between h-22">
-						{/* Logo */}
 						<Link href="/" className="hover:opacity-80 transition-opacity">
 							<Image
 								src="/images/logo.jpg"
@@ -29,12 +20,15 @@ export default function Home() {
 
 						{/* Navigation Links */}
 						<div className="flex items-center space-x-8">
-							<Link href="/" className="text-lg text-gray-100 font-semibold">
+							<Link
+								href="/"
+								className="text-lg text-purple-400 hover:text-gray-100 transition-colors font-medium"
+							>
 								Home
 							</Link>
 							<Link
 								href="/privacy-policy"
-								className="text-lg text-purple-400 hover:text-gray-100 transition-colors font-medium"
+								className="text-lg text-gray-100 font-semibold"
 							>
 								Privacy Policy
 							</Link>
@@ -43,32 +37,60 @@ export default function Home() {
 				</div>
 			</nav>
 
-			<main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{components.map((component) => (
-						<Card
-							key={component.name}
-							className="bg-black border border-purple-900/30 hover:border-purple-400 hover:bg-purple-900/60 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 ease-in-out text-center"
-						>
-							<CardHeader>
-								<CardTitle className="text-2xl text-white">
-									{component.name}
-								</CardTitle>
-								<CardDescription className="text-gray-400">
-									{component.description}
-								</CardDescription>
-							</CardHeader>
-							<CardContent>
-								<Link
-									href={component.href}
-									className="text-white hover:text-purple-300 transition-colors"
-								>
-									View Code & Documentation
-								</Link>
-							</CardContent>
-						</Card>
-					))}
-				</div>
+			{/* Privacy Policy Content */}
+			<main className="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+				<article className="bg-black rounded-lg p-8">
+					<h1 className="text-4xl font-bold text-purple-400 mb-6 text-center">
+						Privacy Policy
+					</h1>
+					<div className="text-purple-300 space-y-6">
+						<p className="text-sm text-purple-400 text-center">
+							Last updated: {new Date().toLocaleDateString()}
+						</p>
+
+						<section>
+							<h2 className="text-2xl font-semibold text-purple-400 mb-3">
+								1. Introduction
+							</h2>
+							<p>
+								Welcome to AKEX. We respect your privacy and are committed to
+								protecting your personal data. This privacy policy will inform
+								you about how we handle your personal data.
+							</p>
+						</section>
+
+						<section>
+							<h2 className="text-2xl font-semibold text-purple-400 mb-3">
+								2. Data We Collect
+							</h2>
+							<p>
+								As a component library documentation site, we collect minimal
+								data. We may collect usage statistics to improve our
+								documentation and user experience.
+							</p>
+						</section>
+
+						<section>
+							<h2 className="text-2xl font-semibold text-purple-400 mb-3">
+								3. How We Use Your Data
+							</h2>
+							<p>
+								Any data collected is used solely to improve the quality and
+								usability of our component library and documentation.
+							</p>
+						</section>
+
+						<section>
+							<h2 className="text-2xl font-semibold text-purple-400 mb-3">
+								4. Contact Us
+							</h2>
+							<p>
+								If you have any questions about this privacy policy, please
+								contact us through our GitHub repository.
+							</p>
+						</section>
+					</div>
+				</article>
 			</main>
 
 			{/* Footer */}
@@ -76,11 +98,11 @@ export default function Home() {
 				<p>Built with 💜 using TypeScript, Next.js, React, and Tailwind CSS.</p>
 				<div className="mt-4 flex justify-center">
 					<a
-						href="https://github.com/alakeldev/akex"
+						href="https://github.com/alakeldev"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Visit AKEX on GitHub"
-						className="text-white hover:text-purple-300 transition-colors"
+						className="text-purple-400 hover:text-purple-300 transition-colors"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"

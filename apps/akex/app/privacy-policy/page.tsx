@@ -53,9 +53,10 @@ export default function PrivacyPolicy() {
 								1. Introduction
 							</h2>
 							<p>
-								Welcome to AKEX. We respect your privacy and are committed to
-								protecting your personal data. This privacy policy will inform
-								you about how we handle your personal data.
+								Welcome to AKEX, a modern React component library. We respect
+								your privacy and are committed to protecting your personal data.
+								This privacy policy will inform you about how we handle your
+								personal data.
 							</p>
 						</section>
 
@@ -86,7 +87,25 @@ export default function PrivacyPolicy() {
 							</h2>
 							<p>
 								If you have any questions about this privacy policy, please
-								contact us through our GitHub repository.
+								contact us through our{" "}
+								<a
+									href="https://github.com/alakeldev"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-white font-semibold underline decoration-purple-400 decoration-2 underline-offset-4 hover:decoration-purple-300 hover:text-purple-100 transition-all"
+								>
+									GitHub account
+								</a>{" "}
+								or{" "}
+								<a
+									href="https://www.alakel.eu"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-white font-semibold underline decoration-purple-400 decoration-2 underline-offset-4 hover:decoration-purple-300 hover:text-purple-100 transition-all"
+								>
+									my personal website
+								</a>
+								.
 							</p>
 						</section>
 					</div>

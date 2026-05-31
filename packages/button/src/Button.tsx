@@ -278,7 +278,7 @@ function Button({
 							inset: 0,
 							width: "45%",
 							background:
-								"linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.5) 50%, transparent 70%)",
+								"linear-gradient(105deg, transparent 30%, rgba(167,139,250,0.55) 50%, transparent 70%)",
 							pointerEvents: "none",
 						}}
 						initial={{ x: "-150%" }}

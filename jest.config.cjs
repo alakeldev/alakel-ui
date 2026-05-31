@@ -5,7 +5,8 @@ module.exports = {
   roots: ['<rootDir>/packages'],
   testMatch: ['**/__tests__/**/*.test.ts', '**/__tests__/**/*.test.tsx'],
   collectCoverageFrom: [
-    'packages/*/src/**/*.{ts,tsx}',
+    'packages/button/src/**/*.{ts,tsx}',
+    'packages/utils/src/**/*.{ts,tsx}',
     '!packages/*/src/**/*.d.ts',
     '!packages/*/src/**/index.ts',
   ],
@@ -14,6 +15,8 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.cjs'],
   moduleNameMapper: {
     '^@akex/(.*)$': '<rootDir>/packages/$1/src',
+    '^motion/react$': '<rootDir>/__mocks__/motion-react.tsx',
+    '^motion$': '<rootDir>/__mocks__/motion.ts',
   },
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {

@@ -1,186 +1,303 @@
+import type { ButtonAnimation } from "@akex/button";
 import { Button } from "@akex/button";
 import Link from "next/link";
 
-export default function ButtonDocsPage() {
+// ---------------------------------------------------------------------------
+// Static data – kept outside the component to avoid re-creation per render
+// ---------------------------------------------------------------------------
+
+const variants = [
+	{ value: "default", label: "Default" },
+	{ value: "secondary", label: "Secondary" },
+	{ value: "destructive", label: "Destructive" },
+	{ value: "outline", label: "Outline" },
+	{ value: "ghost", label: "Ghost" },
+	{ value: "link", label: "Link" },
+] as const;
+
+const sizes = [
+	{ value: "xs", label: "xs" },
+	{ value: "sm", label: "sm" },
+	{ value: "default", label: "default" },
+	{ value: "lg", label: "lg" },
+	{ value: "icon", label: "icon" },
+] as const;
+
+const animations: {
+	value: ButtonAnimation;
+	label: string;
+	description: string;
+}[] = [
+	{
+		value: "shimmer",
+		label: "Shimmer",
+		description:
+			"Looping light-sweep glint clipped inside the button — polished & eye-catching.",
+	},
+	{
+		value: "ripple",
+		label: "Ripple",
+		description:
+			"Material-style expanding wave on click, perfectly clipped to the button shape.",
+	},
+	{
+		value: "elastic",
+		label: "Elastic",
+		description:
+			"X/Y axes squish in opposite directions on hover — satisfying rubber-band feel.",
+	},
+	{
+		value: "glow",
+		label: "Glow",
+		description:
+			"Neon violet aura pulses continuously and blazes on hover — high-energy CTA.",
+	},
+	{
+		value: "tilt",
+		label: "Tilt",
+		description:
+			"3-D perspective rotation toward the cursor — elegant depth effect.",
+	},
+	{
+		value: "bounce",
+		label: "Bounce",
+		description:
+			"Spring lift on hover, soft press on tap — playful & approachable.",
+	},
+	{
+		value: "pulse",
+		label: "Pulse",
+		description:
+			"Continuous heartbeat scale loop — draws attention to a primary CTA.",
+	},
+	{
+		value: "press",
+		label: "Press",
+		description:
+			"Shadow-depth lift on hover, deep press on tap — satisfying physical button feel.",
+	},
+];
+
+const props = [
+	{
+		name: "variant",
+		type: "string",
+		default: '"default"',
+		description: "Visual style",
+	},
+	{
+		name: "size",
+		type: "string",
+		default: '"default"',
+		description: "Button dimensions",
+	},
+	{
+		name: "animation",
+		type: "ButtonAnimation",
+		default: "—",
+		description:
+			'"shimmer" | "ripple" | "elastic" | "glow" | "tilt" | "bounce" | "pulse" | "press"',
+	},
+	{
+		name: "disabled",
+		type: "boolean",
+		default: "false",
+		description: "Disables interaction and animation",
+	},
+	{
+		name: "className",
+		type: "string",
+		default: "—",
+		description: "Extra Tailwind classes",
+	},
+	{
+		name: "...props",
+		type: "ButtonProps",
+		default: "—",
+		description: "All native button attributes",
+	},
+];
+
+// ---------------------------------------------------------------------------
+// Shared section wrapper
+// ---------------------------------------------------------------------------
+
+function BackLink() {
+	return (
+		<Link
+			href="/"
+			className="inline-flex items-center gap-1.5 h-7 px-2.5 text-[0.8rem] font-medium rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors"
+		>
+			← Back
+		</Link>
+	);
+}
+
+function Section({
+	title,
+	children,
+}: {
+	title: string;
+	children: React.ReactNode;
+}) {
+	return (
+		<section className="rounded-2xl border border-white/10 bg-white/5 p-6 mb-6">
+			<h2 className="text-xl font-semibold text-white mb-5">{title}</h2>
+			{children}
+		</section>
+	);
+}
+
+// ---------------------------------------------------------------------------
+// Page
+// ---------------------------------------------------------------------------
+
+export default function ButtonPage() {
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
-			<div className="max-w-6xl mx-auto p-8">
-				{/* Back Navigation */}
-				<Link
-					href="/"
-					className="inline-flex items-center text-purple-400 hover:text-purple-300 mb-8"
-				>
-					← Back to Components
-				</Link>
+			<div className="max-w-4xl mx-auto px-6 py-10">
+				<div className="mb-8">
+					<BackLink />
+				</div>
 
 				{/* Header */}
-				<header className="mb-12">
-					<h1 className="text-5xl font-bold text-white mb-4">Button</h1>
-					<p className="text-xl text-gray-300 mb-2">
-						Flexible button component with multiple variants and sizes
+				<header className="mb-10 text-center">
+					<h1 className="text-4xl font-bold text-white mb-3">Button</h1>
+					<p className="text-gray-300 mb-4 max-w-lg mx-auto">
+						Accessible button with{" "}
+						<span className="underline decoration-purple-400 underline-offset-2">
+							6 variants
+						</span>
+						,{" "}
+						<span className="underline decoration-purple-400 underline-offset-2">
+							8 sizes
+						</span>
+						, and{" "}
+						<span className="underline decoration-purple-400 underline-offset-2">
+							8 motion animations
+						</span>
+						.
 					</p>
-					<code className="text-sm text-purple-400 bg-black/30 px-3 py-1 rounded">
+					<code className="text-sm text-purple-400 bg-black/40 px-3 py-1.5 rounded-lg">
 						@akex/button
 					</code>
 				</header>
 
-				{/* Installation */}
-				<section className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 mb-8">
-					<h2 className="text-2xl font-semibold text-white mb-4">
-						Installation
-					</h2>
-					<div className="bg-black/50 rounded p-4 font-mono text-sm text-green-400">
+				{/* Install */}
+				<Section title="Installation">
+					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
 						npm install @akex/button
-					</div>
-				</section>
+					</pre>
+				</Section>
 
 				{/* Usage */}
-				<section className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 mb-8">
-					<h2 className="text-2xl font-semibold text-white mb-4">Usage</h2>
-					<div className="bg-black/50 rounded p-4 font-mono text-sm text-green-400 mb-4">
-						{`import { Button } from "@akex/button";
+				<Section title="Usage">
+					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">{`import { Button } from "@akex/button";
 
-export default function App() {
-  return <Button>Click me</Button>;
-}`}
-					</div>
-				</section>
+<Button variant="default" size="default">
+  Click me
+</Button>
+
+{/* With animation */}
+<Button animation="shimmer">Animated</Button>`}</pre>
+				</Section>
 
 				{/* Variants */}
-				<section className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 mb-8">
-					<h2 className="text-2xl font-semibold text-white mb-4">Variants</h2>
-					<p className="text-gray-300 mb-6">
-						Button supports 6 different variants for different use cases
-					</p>
-					<div className="space-y-6">
-						<div className="flex items-center gap-4">
-							<Button variant="default">Default</Button>
-							<code className="text-sm text-gray-400">variant="default"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button variant="secondary">Secondary</Button>
-							<code className="text-sm text-gray-400">variant="secondary"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button variant="destructive">Destructive</Button>
-							<code className="text-sm text-gray-400">
-								variant="destructive"
-							</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button variant="outline">Outline</Button>
-							<code className="text-sm text-gray-400">variant="outline"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button variant="ghost">Ghost</Button>
-							<code className="text-sm text-gray-400">variant="ghost"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button variant="link">Link</Button>
-							<code className="text-sm text-gray-400">variant="link"</code>
-						</div>
+				<Section title="Variants">
+					<div className="flex flex-wrap gap-3">
+						{variants.map(({ value, label }) => (
+							<div key={value} className="flex flex-col items-center gap-2">
+								<Button variant={value}>{label}</Button>
+								<code className="text-xs text-gray-400">{value}</code>
+							</div>
+						))}
 					</div>
-				</section>
+				</Section>
 
 				{/* Sizes */}
-				<section className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 mb-8">
-					<h2 className="text-2xl font-semibold text-white mb-4">Sizes</h2>
-					<p className="text-gray-300 mb-6">
-						Button supports 8 different sizes including icon-only variants
-					</p>
-					<div className="space-y-6">
-						<div className="flex items-center gap-4">
-							<Button size="xs">Extra Small</Button>
-							<code className="text-sm text-gray-400">size="xs"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button size="sm">Small</Button>
-							<code className="text-sm text-gray-400">size="sm"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button size="default">Default</Button>
-							<code className="text-sm text-gray-400">size="default"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button size="lg">Large</Button>
-							<code className="text-sm text-gray-400">size="lg"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button size="icon">→</Button>
-							<code className="text-sm text-gray-400">size="icon"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button size="icon-xs">→</Button>
-							<code className="text-sm text-gray-400">size="icon-xs"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button size="icon-sm">→</Button>
-							<code className="text-sm text-gray-400">size="icon-sm"</code>
-						</div>
-						<div className="flex items-center gap-4">
-							<Button size="icon-lg">→</Button>
-							<code className="text-sm text-gray-400">size="icon-lg"</code>
-						</div>
+				<Section title="Sizes">
+					<div className="flex flex-wrap items-center gap-4">
+						{sizes.map(({ value, label }) => (
+							<div key={value} className="flex flex-col items-center gap-2">
+								<Button size={value}>{value === "icon" ? "→" : label}</Button>
+								<code className="text-xs text-gray-400">{label}</code>
+							</div>
+						))}
 					</div>
-				</section>
+				</Section>
 
-				{/* Props */}
-				<section className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
-					<h2 className="text-2xl font-semibold text-white mb-4">Props</h2>
+				{/* Disabled */}
+				<Section title="Disabled State">
+					<div className="flex flex-wrap gap-3">
+						{variants.map(({ value, label }) => (
+							<Button key={value} variant={value} disabled>
+								{label}
+							</Button>
+						))}
+					</div>
+				</Section>
+
+				{/* Animations */}
+				<Section title="Animations">
+					<p className="text-gray-400 text-sm mb-6">
+						Pass the <code className="text-purple-400">animation</code> prop to
+						enable a built-in motion preset. Animations are disabled
+						automatically on disabled buttons.
+					</p>
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+						{animations.map(({ value, label, description }) => (
+							<div
+								key={value}
+								className="rounded-2xl border border-purple-400/40 bg-gradient-to-br from-purple-900/70 to-indigo-900/70 backdrop-blur-sm p-6 flex flex-col items-center gap-4 text-center shadow-xl shadow-purple-950/40 ring-1 ring-inset ring-white/5"
+							>
+								<div>
+									<p className="text-white font-medium">{label}</p>
+									<p className="text-gray-400 text-xs mt-0.5">{description}</p>
+								</div>
+								<Button animation={value} size="sm" className="px-5">
+									{label}
+								</Button>
+								<code className="text-xs text-purple-300 bg-purple-950/70 border border-purple-500/20 px-2 py-1 rounded-lg">
+									animation="{value}"
+								</code>
+							</div>
+						))}
+					</div>
+				</Section>
+
+				{/* Props table */}
+				<Section title="Props">
 					<div className="overflow-x-auto">
-						<table className="w-full text-sm text-left">
-							<thead className="text-white border-b border-white/20">
-								<tr>
-									<th className="py-3 px-4">Prop</th>
-									<th className="py-3 px-4">Type</th>
-									<th className="py-3 px-4">Default</th>
-									<th className="py-3 px-4">Description</th>
+						<table className="w-full text-sm text-left border-collapse">
+							<thead>
+								<tr className="border-b border-white/20 text-white">
+									<th className="py-2 px-3">Prop</th>
+									<th className="py-2 px-3">Type</th>
+									<th className="py-2 px-3">Default</th>
+									<th className="py-2 px-3">Description</th>
 								</tr>
 							</thead>
 							<tbody className="text-gray-300">
-								<tr className="border-b border-white/10">
-									<td className="py-3 px-4 font-mono text-purple-400">
-										variant
-									</td>
-									<td className="py-3 px-4 font-mono text-xs">string</td>
-									<td className="py-3 px-4 font-mono text-xs">"default"</td>
-									<td className="py-3 px-4">Button style variant</td>
-								</tr>
-								<tr className="border-b border-white/10">
-									<td className="py-3 px-4 font-mono text-purple-400">size</td>
-									<td className="py-3 px-4 font-mono text-xs">string</td>
-									<td className="py-3 px-4 font-mono text-xs">"default"</td>
-									<td className="py-3 px-4">Button size</td>
-								</tr>
-								<tr className="border-b border-white/10">
-									<td className="py-3 px-4 font-mono text-purple-400">
-										className
-									</td>
-									<td className="py-3 px-4 font-mono text-xs">string</td>
-									<td className="py-3 px-4 font-mono text-xs">-</td>
-									<td className="py-3 px-4">Additional CSS classes</td>
-								</tr>
-								<tr>
-									<td className="py-3 px-4 font-mono text-purple-400">
-										...props
-									</td>
-									<td className="py-3 px-4 font-mono text-xs">ButtonProps</td>
-									<td className="py-3 px-4 font-mono text-xs">-</td>
-									<td className="py-3 px-4">All HTML button attributes</td>
-								</tr>
+								{props.map((row) => (
+									<tr key={row.name} className="border-b border-white/10">
+										<td className="py-2 px-3 font-mono text-purple-400 text-xs">
+											{row.name}
+										</td>
+										<td className="py-2 px-3 font-mono text-xs">{row.type}</td>
+										<td className="py-2 px-3 font-mono text-xs">
+											{row.default}
+										</td>
+										<td className="py-2 px-3 text-xs">{row.description}</td>
+									</tr>
+								))}
 							</tbody>
 						</table>
 					</div>
-				</section>
-			</div>
-			<div className="max-w-6xl mx-auto p-8">
-				{/* Back Navigation */}
-				<Link
-					href="/"
-					className="inline-flex items-center text-purple-400 hover:text-purple-300 mb-8"
-				>
-					← Back to Components
-				</Link>
+				</Section>
+
+				<div className="mt-10">
+					<BackLink />
+				</div>
 			</div>
 		</div>
 	);

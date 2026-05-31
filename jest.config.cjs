@@ -6,6 +6,8 @@ module.exports = {
   testMatch: ['**/__tests__/**/*.test.ts', '**/__tests__/**/*.test.tsx'],
   collectCoverageFrom: [
     'packages/button/src/**/*.{ts,tsx}',
+    'packages/label/src/**/*.{ts,tsx}',
+    'packages/carousel/src/**/*.{ts,tsx}',
     'packages/utils/src/**/*.{ts,tsx}',
     '!packages/*/src/**/*.d.ts',
     '!packages/*/src/**/index.ts',

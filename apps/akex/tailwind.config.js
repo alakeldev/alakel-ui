@@ -7,6 +7,7 @@ export default {
 		"../../packages/button/src/**/*.{js,ts,jsx,tsx}",
 		"../../packages/card/src/**/*.{js,ts,jsx,tsx}",
 		"../../packages/label/src/**/*.{js,ts,jsx,tsx}",
+		"../../packages/carousel/src/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
 		extend: {

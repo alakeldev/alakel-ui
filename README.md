@@ -27,8 +27,8 @@ Full API documentation and live demos are in the **docs app** — run `npm run d
 
 | Package | Version | Description |
 |---------|---------|-------------|
-| [`@akex/button`](packages/button) | 1.0.0 | Accessible button — 6 variants, 8 sizes, 8 motion animations |
-| [`@akex/utils`](packages/utils) | 1.0.0 | Shared utilities — `cn` class merger |
+| [`@akex/button`](packages/button) | 1.0.0 | Accessible button — 6 variants, 8 sizes, 8 motion animations || [`@akex/label`](packages/label) | 1.0.0 | Accessible label — 8 variants, 4 sizes, 8 motion animations |
+| [`@akex/carousel`](packages/carousel) | 1.0.0 | Animated carousel — 5 transition presets, auto-play, keyboard nav || [`@akex/utils`](packages/utils) | 1.0.0 | Shared utilities — `cn` class merger |
 
 > Adding a new package? See [Adding a Package](#adding-a-package). Only this table needs updating — nothing else.
 

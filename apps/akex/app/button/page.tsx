@@ -128,7 +128,7 @@ function BackLink() {
 			href="/"
 			className="inline-flex items-center gap-1.5 h-7 px-2.5 text-[0.8rem] font-medium rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors"
 		>
-			← Back
+			Back
 		</Link>
 	);
 }

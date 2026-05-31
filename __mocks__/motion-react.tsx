@@ -14,7 +14,7 @@ type MotionProps = {
 
 const createMotionComponent = (Tag: keyof React.JSX.IntrinsicElements) =>
   React.forwardRef<HTMLElement, MotionProps>(
-    ({ children, animate: _a, whileHover: _wh, whileTap: _wt, transition: _t, ...props }, ref) => (
+    ({ children, animate: _a, whileHover: _wh, whileTap: _wt, transition: _t, initial: _i, ...props }, ref) => (
       React.createElement(Tag, { "data-testid": `motion-${Tag}`, ref, ...props }, children)
     )
   );

@@ -5,9 +5,11 @@ export default {
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
 		"../../packages/button/src/**/*.{js,ts,jsx,tsx}",
-		"../../packages/card/src/**/*.{js,ts,jsx,tsx}",
 		"../../packages/label/src/**/*.{js,ts,jsx,tsx}",
 		"../../packages/carousel/src/**/*.{js,ts,jsx,tsx}",
+		"../../packages/card/src/**/*.{js,ts,jsx,tsx}",
+		"../../packages/input/src/**/*.{js,ts,jsx,tsx}",
+		"../../packages/accordion/src/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
 		extend: {

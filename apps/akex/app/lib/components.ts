@@ -27,4 +27,25 @@ export const components: Component[] = [
 			"Animated carousel with 5 transition presets, auto-play, and keyboard navigation",
 		package: "@akex/carousel",
 	},
+	{
+		name: "Card",
+		href: "/card",
+		description:
+			"Composable card with 5 variants and 4 motion animations like lift, tilt, and glow",
+		package: "@akex/card",
+	},
+	{
+		name: "Input",
+		href: "/input",
+		description:
+			"Animated form input with a floating label, focus glow, and shake-on-error",
+		package: "@akex/input",
+	},
+	{
+		name: "Accordion",
+		href: "/accordion",
+		description:
+			"Expandable panels with smooth height animation, single and multiple modes",
+		package: "@akex/accordion",
+	},
 ];

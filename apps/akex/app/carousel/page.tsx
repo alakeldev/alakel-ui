@@ -204,6 +204,10 @@ function Section({
 	);
 }
 
+// Pre-built once at module load — demoSlides is a module-level constant so
+// these JSX elements never need to be recreated across re-renders.
+const DEMO_SLIDES = demoSlides.map((s) => <SlideCard key={s.title} {...s} />);
+
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
@@ -211,8 +215,6 @@ function Section({
 export default function CarouselPage() {
 	const [activeAnimation, setActiveAnimation] =
 		useState<CarouselAnimation>("slide");
-
-	const slides = demoSlides.map((s) => <SlideCard key={s.title} {...s} />);
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
@@ -289,7 +291,7 @@ const slides = [
 					{/* Carousel */}
 					<Carousel
 						key={activeAnimation}
-						items={slides}
+						items={DEMO_SLIDES}
 						animation={activeAnimation}
 						className="w-full"
 					/>

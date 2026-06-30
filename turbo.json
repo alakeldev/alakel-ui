@@ -12,7 +12,8 @@
     },
     "test": {
       "dependsOn": ["^build"],
-      "outputs": ["coverage/**"]
+      "outputs": [],
+      "cache": false
     },
     "test:watch": {
       "persistent": true,
@@ -20,7 +21,8 @@
     },
     "test:coverage": {
       "dependsOn": ["^build"],
-      "outputs": ["coverage/**"]
+      "outputs": [],
+      "cache": false
     },
     "typecheck": {
       "dependsOn": ["^build"],

@@ -146,6 +146,7 @@ function Input({
 					<motion.p
 						key={message}
 						id={messageId}
+						role={invalid ? "alert" : undefined}
 						data-slot="input-message"
 						data-invalid={invalid || undefined}
 						className={cn(

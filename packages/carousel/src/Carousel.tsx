@@ -204,6 +204,7 @@ function Carousel({
 		<section
 			aria-label="Carousel"
 			data-slot="carousel"
+			// biome-ignore lint/a11y/noNoninteractiveTabindex: carousel must be focusable for arrow-key navigation; WAI-ARIA carousel pattern requires a focusable region container
 			tabIndex={0}
 			onKeyDown={handleKeyDown}
 			className={cn("relative select-none focus:outline-none", className)}
@@ -213,7 +214,7 @@ function Carousel({
 				className="relative overflow-hidden rounded-xl"
 				style={isFlip ? { perspective: "1200px" } : undefined}
 			>
-				<AnimatePresence mode="wait">
+				<AnimatePresence mode={animation === "fade" ? "wait" : "sync"}>
 					<motion.div
 						key={currentIndex}
 						variants={variants}

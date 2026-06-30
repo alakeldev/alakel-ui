@@ -23,8 +23,9 @@ COPY apps/akex/package.json ./apps/akex/
 # Install dependencies — --ignore-scripts skips git hooks (lefthook)
 RUN npm ci --ignore-scripts
 
-# Copy shared configs then all source
+# Copy shared configs, mocks, and all source
 COPY packages/tsconfig.base.json ./packages/
+COPY __mocks__ ./__mocks__/
 COPY packages ./packages
 COPY apps ./apps
 

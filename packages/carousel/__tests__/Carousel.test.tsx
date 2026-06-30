@@ -317,9 +317,78 @@ describe("Carousel – accessibility", () => {
 		).toBeInTheDocument();
 	});
 
+	it("carousel root is focusable (tabIndex=0)", () => {
+		renderCarousel();
+		const carousel = screen.getByRole("region", { name: "Carousel" });
+		expect(carousel).toHaveAttribute("tabindex", "0");
+	});
+
 	it("renders with a single item without errors", () => {
 		renderCarousel({ items: ["Only slide"] });
 		expect(screen.getByText("Only slide")).toBeInTheDocument();
 		expect(screen.getAllByRole("tab")).toHaveLength(1);
+	});
+});
+
+// ---------------------------------------------------------------------------
+// Keyboard navigation
+// ---------------------------------------------------------------------------
+
+describe("Carousel – keyboard navigation", () => {
+	it("ArrowRight advances to the next slide", async () => {
+		const user = userEvent.setup();
+		renderCarousel();
+		const carousel = screen.getByRole("region", { name: "Carousel" });
+		carousel.focus();
+		await user.keyboard("{ArrowRight}");
+		expect(screen.getByText("Slide 2")).toBeInTheDocument();
+	});
+
+	it("ArrowLeft goes back to the previous slide", async () => {
+		const user = userEvent.setup();
+		renderCarousel();
+		const carousel = screen.getByRole("region", { name: "Carousel" });
+		carousel.focus();
+		await user.keyboard("{ArrowRight}");
+		await user.keyboard("{ArrowLeft}");
+		expect(screen.getByText("Slide 1")).toBeInTheDocument();
+	});
+
+	it("End key jumps to the last slide", async () => {
+		const user = userEvent.setup();
+		renderCarousel();
+		const carousel = screen.getByRole("region", { name: "Carousel" });
+		carousel.focus();
+		await user.keyboard("{End}");
+		expect(screen.getByText("Slide 4")).toBeInTheDocument();
+	});
+
+	it("Home key jumps back to the first slide", async () => {
+		const user = userEvent.setup();
+		renderCarousel();
+		const carousel = screen.getByRole("region", { name: "Carousel" });
+		carousel.focus();
+		await user.keyboard("{End}");
+		await user.keyboard("{Home}");
+		expect(screen.getByText("Slide 1")).toBeInTheDocument();
+	});
+
+	it("ArrowLeft loops to the last slide from the first when loop=true", async () => {
+		const user = userEvent.setup();
+		renderCarousel({ loop: true });
+		const carousel = screen.getByRole("region", { name: "Carousel" });
+		carousel.focus();
+		await user.keyboard("{ArrowLeft}");
+		expect(screen.getByText("Slide 4")).toBeInTheDocument();
+	});
+
+	it("ArrowRight loops to the first slide from the last when loop=true", async () => {
+		const user = userEvent.setup();
+		renderCarousel({ loop: true });
+		const carousel = screen.getByRole("region", { name: "Carousel" });
+		carousel.focus();
+		await user.keyboard("{End}");
+		await user.keyboard("{ArrowRight}");
+		expect(screen.getByText("Slide 1")).toBeInTheDocument();
 	});
 });

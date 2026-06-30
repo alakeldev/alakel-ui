@@ -1,4 +1,17 @@
+import type { Metadata, Viewport } from "next";
+import type React from "react";
 import "./globals.css";
+
+export const metadata: Metadata = {
+	title: "AKEX - Docs & Playground",
+	description:
+		"Accessible, animated React UI components — independently published packages from the AKEX Turborepo monorepo.",
+};
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+};
 
 export default function RootLayout({
 	children,
@@ -7,9 +20,6 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<head>
-				<title>AKEX - Docs & Playground</title>
-			</head>
 			<body>{children}</body>
 		</html>
 	);

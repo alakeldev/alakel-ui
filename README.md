@@ -14,9 +14,166 @@ Built with TypeScript, Tailwind CSS, and Motion.
 [![Motion](https://img.shields.io/badge/Motion-12-pink?logo=framer)](https://motion.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-[Packages](#packages) · [Quick Start](#quick-start) · [Project Structure](#project-structure) · [Adding a Package](#adding-a-package) · [Testing](#testing) · [Development](#development) · [Contributing](#contributing)
+[Running Locally](#running-locally) · [Packages](#packages) · [Project Structure](#project-structure) · [Adding a Package](#adding-a-package) · [Testing](#testing) · [Development](#development) · [Contributing](#contributing)
 
 </div>
+
+---
+
+## Running Locally
+
+Complete step-by-step guide to get the project fully working on your machine.
+
+### Prerequisites
+
+Make sure the following tools are installed before you begin:
+
+| Tool | Required Version | Check |
+|------|-----------------|-------|
+| **Node.js** | 20 or later | `node -v` |
+| **npm** | 11 or later | `npm -v` |
+| **Git** | any recent | `git --version` |
+| **Docker** *(optional)* | any recent | `docker -v` |
+
+> **Node.js 20+** is required. The project uses `"packageManager": "npm@11.7.0"`, so npm 11 is strongly recommended to match the lockfile exactly.
+
+---
+
+### Option A — Run directly on your machine (recommended)
+
+#### Step 1 — Clone the repository
+
+```bash
+git clone git@github.com:alakeldev/akex.git
+cd akex
+```
+
+> If you do not have SSH configured, use HTTPS instead:
+> ```bash
+> git clone https://github.com/alakeldev/akex.git
+> cd akex
+> ```
+
+#### Step 2 — Install all dependencies
+
+From the **root** of the monorepo, run:
+
+```bash
+npm install
+```
+
+This installs dependencies for the root workspace, all packages (`@akex/*`), and the docs app in a single step via npm workspaces.
+
+#### Step 3 — Build the packages
+
+The docs app imports the packages from their `src/` directly in development, but you must build them at least once so TypeScript and the Next.js app can resolve all types correctly:
+
+```bash
+npm run build:packages
+```
+
+This runs `tsup` for every package under `packages/` and emits their `dist/` bundles and type declarations.
+
+#### Step 4 — Install git hooks (optional but recommended)
+
+```bash
+npx lefthook install
+```
+
+Lefthook installs `pre-commit` and `pre-push` hooks that run lint, format, type-check, tests, and build checks automatically. Skip this step if you prefer to run checks manually.
+
+#### Step 5 — Start the docs & playground app
+
+```bash
+npm run dev:akex
+```
+
+Open **[http://localhost:3001](http://localhost:3001)** in your browser.
+
+You will see the AKEX component gallery. Click any component card to open its live docs page and interactive playground.
+
+#### Step 6 — (Optional) Watch-build packages during development
+
+If you are working on a package and want it to rebuild on every save, run this in a **second terminal**:
+
+```bash
+npm run dev:packages
+```
+
+This starts `tsup --watch` for all packages in parallel. Your changes to any file under `packages/*/src/` will rebuild automatically and the Next.js dev server will pick them up.
+
+---
+
+### Option B — Run with Docker
+
+Docker runs the docs app in a container with all dependencies pre-installed. No local Node.js setup required.
+
+#### Step 1 — Clone the repository
+
+```bash
+git clone git@github.com:alakeldev/akex.git
+cd akex
+```
+
+#### Step 2 — Build the Docker image
+
+```bash
+npm run docker:build
+```
+
+This builds the development image defined in `docker/Dockerfile.dev`. Dependencies are installed inside the container and the packages are pre-built.
+
+#### Step 3 — Start the container
+
+```bash
+npm run docker:start
+```
+
+Open **[http://localhost:3001](http://localhost:3001)** in your browser.
+
+The container mounts your local source files as a volume, so any changes you make to `apps/` or `packages/` are reflected live without rebuilding the image.
+
+#### Useful Docker commands
+
+```bash
+npm run docker:stop       # Stop the running container
+npm run docker:rebuild    # Stop → rebuild image → start (use after changing dependencies)
+```
+
+---
+
+### Verify everything works
+
+After starting the app (either option), run these checks to confirm the full project is healthy:
+
+```bash
+# Type-check all packages and the app
+npm run tsc:check
+
+# Run all tests with coverage
+npm run jest:test
+
+# Lint all TypeScript/TSX files
+npm run biome:check
+
+# Lint all CSS/SCSS files
+npm run stylelint:check
+```
+
+All four commands should exit with no errors on a clean clone.
+
+---
+
+### Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| `Cannot find module '@akex/button'` | Run `npm run build:packages` — the packages must be built before the app resolves their types |
+| `npm install` fails with peer dependency errors | Use `npm install --legacy-peer-deps` |
+| Port 3001 already in use | Stop the conflicting process or change the port in `apps/akex/package.json` and `compose.yml` |
+| Docker hot-reload not working | Make sure you are using `npm run docker:start` (not a plain `docker run`); the compose file mounts your source as a volume |
+| `lefthook: command not found` | Run `npx lefthook install` from the repo root |
+| Tests fail with `Cannot find module 'motion/react'` | Run `npm install` from the repo root — the mock in `__mocks__/` requires the root dependencies to be installed |
 
 ---
 
@@ -195,9 +352,9 @@ npm run dev:packages      # Watch-build all packages in parallel
 
 ```bash
 npm run docker:build      # Build the container image
-npm run docker:start      # Start (detached)
+npm run docker:start      # Start (detached) — mounts source as volume for live reload
 npm run docker:stop       # Stop
-npm run docker:rebuild    # Stop → build → start
+npm run docker:rebuild    # Stop → build → start (use after changing dependencies)
 ```
 
 ### Build
@@ -260,7 +417,7 @@ npx lefthook run pre-push
 ## Contributing
 
 1. Fork and clone the repository
-2. `npm install`
+2. Follow the [Running Locally](#running-locally) guide to set up the project
 3. Create a branch: `git checkout -b feat/your-feature`
 4. Write code and tests — `npm run jest:test` must stay green
 5. Commit — Lefthook runs lint, format, and typecheck automatically

@@ -1,23 +1,34 @@
+# Test Dockerfile - runs the full Jest suite in an isolated container
 FROM node:22-alpine
 
-# Install system dependencies
 RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-# Copy configuration files
+# Copy root workspace manifests
 COPY package.json package-lock.json turbo.json biome.json tsconfig.json ./
 COPY jest.config.cjs jest.setup.cjs ./
 
-# Copy workspace source
+# Copy individual workspace package.json files so npm ci can resolve
+# all workspaces before any source code is copied (layer caching).
+COPY packages/accordion/package.json ./packages/accordion/
+COPY packages/button/package.json ./packages/button/
+COPY packages/card/package.json ./packages/card/
+COPY packages/carousel/package.json ./packages/carousel/
+COPY packages/input/package.json ./packages/input/
+COPY packages/label/package.json ./packages/label/
+COPY packages/utils/package.json ./packages/utils/
+COPY apps/akex/package.json ./apps/akex/
+
+# Install dependencies — --ignore-scripts skips git hooks (lefthook)
+RUN npm ci --ignore-scripts
+
+# Copy shared configs then all source
+COPY packages/tsconfig.base.json ./packages/
 COPY packages ./packages
 COPY apps ./apps
 
-# Install dependencies (--ignore-scripts skips git hooks)
-RUN npm ci --legacy-peer-deps --ignore-scripts
-
-# Build packages (required for tests)
+# Build packages (required before running tests)
 RUN npm run build:packages
 
-# Run tests with coverage
 CMD ["npm", "run", "jest:test"]

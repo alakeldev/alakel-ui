@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
 					</h1>
 					<div className="text-purple-300 space-y-6">
 						<p className="text-sm text-purple-400 text-center">
-							Last updated: {new Date().toLocaleDateString()}
+							Last updated: June 2025
 						</p>
 
 						<section>

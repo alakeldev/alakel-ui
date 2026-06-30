@@ -2,17 +2,18 @@
 
 # AKEX
 
-**Modern React Component Library**
+**Accessible · Animated · Independent**
 
-Accessible, animated UI components shipped as independent packages from a Turborepo monorepo.
-Built with TypeScript, Tailwind CSS, and Motion.
+Seven production-ready React UI packages, each published separately under the `@akex` scope.
+Built with TypeScript, Tailwind CSS, and Motion inside a Turborepo monorepo.
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](https://react.dev/)
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
-[![Motion](https://img.shields.io/badge/Motion-12-pink?logo=framer)](https://motion.dev/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![CI](https://github.com/alakeldev/akex/actions/workflows/ci.yml/badge.svg)](https://github.com/alakeldev/akex/actions/workflows/ci.yml)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)](https://react.dev/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Motion](https://img.shields.io/badge/Motion-12-ff0055?logo=framer&logoColor=white)](https://motion.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
 
 [Running Locally](#running-locally) · [Packages](#packages) · [Project Structure](#project-structure) · [Adding a Package](#adding-a-package) · [Testing](#testing) · [Development](#development) · [Contributing](#contributing)
 

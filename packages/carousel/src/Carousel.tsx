@@ -157,6 +157,30 @@ function Carousel({
 		goTo(loop ? (currentIndex - 1 + total) % total : currentIndex - 1, -1);
 	}, [currentIndex, total, loop, goTo]);
 
+	const handleKeyDown = useCallback(
+		(e: React.KeyboardEvent<HTMLElement>) => {
+			switch (e.key) {
+				case "ArrowLeft":
+					e.preventDefault();
+					prev();
+					break;
+				case "ArrowRight":
+					e.preventDefault();
+					next();
+					break;
+				case "Home":
+					e.preventDefault();
+					goTo(0, -1);
+					break;
+				case "End":
+					e.preventDefault();
+					goTo(total - 1, 1);
+					break;
+			}
+		},
+		[prev, next, goTo, total],
+	);
+
 	// Auto-play: restart the interval whenever `next` changes (index or loop change).
 	useEffect(() => {
 		if (!autoPlay) return;
@@ -180,7 +204,9 @@ function Carousel({
 		<section
 			aria-label="Carousel"
 			data-slot="carousel"
-			className={cn("relative select-none", className)}
+			tabIndex={0}
+			onKeyDown={handleKeyDown}
+			className={cn("relative select-none focus:outline-none", className)}
 		>
 			{/* Slide track */}
 			<div

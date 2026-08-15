@@ -18,7 +18,8 @@ COPY packages/carousel/package.json ./packages/carousel/
 COPY packages/input/package.json ./packages/input/
 COPY packages/label/package.json ./packages/label/
 COPY packages/utils/package.json ./packages/utils/
-COPY apps/akex/package.json ./apps/akex/
+COPY apps/web/package.json ./apps/web/
+COPY apps/mobile/package.json ./apps/mobile/
 
 # Step 3: Install dependencies - CACHED unless package.json changes
 # Uses npm cache mount for faster reinstalls

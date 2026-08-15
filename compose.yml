@@ -10,5 +10,5 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-      - /app/apps/akex/.next
-    command: npm run dev:akex
+      - /app/apps/web/.next
+    command: npm run dev:web

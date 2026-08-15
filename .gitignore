@@ -34,9 +34,6 @@ pnpm-debug.log*
 # TypeScript
 *.tsbuildinfo
 
-# Jest / testing
-coverage/
-
 # Optional: lockfiles for other package managers
 *.lock
 

@@ -1,5 +1,5 @@
 services:
-  # UI Website (Docs with integrated Playground)
+  # Blank Alakel UI web application
   alakel-ui:
     build:
       context: .

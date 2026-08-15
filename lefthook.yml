@@ -7,17 +7,10 @@ pre-commit:
     biome:
       run: npm run biome:fix
       stage_fixed: true
-    stylelint:
-      glob: "*.{css,scss}"
-      run: npm run stylelint:fix
-      stage_fixed: true
     typecheck:
       run: npm run tsc:check
 
 pre-push:
-  parallel: true
   commands:
-    jest:
-      run: npm run jest:test
     build:
-      run: npm run build:packages
+      run: npm run build

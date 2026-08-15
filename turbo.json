@@ -10,26 +10,8 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
-    "test": {
-      "dependsOn": ["^build"],
-      "outputs": [],
-      "cache": false
-    },
-    "test:watch": {
-      "persistent": true,
-      "cache": false
-    },
-    "test:coverage": {
-      "dependsOn": ["^build"],
-      "outputs": [],
-      "cache": false
-    },
     "typecheck": {
       "dependsOn": ["^build"],
-      "outputs": []
-    },
-    "check-types": {
-      "dependsOn": ["^check-types"],
       "outputs": []
     },
     "lint": {

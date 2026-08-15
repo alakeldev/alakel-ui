@@ -13,10 +13,7 @@
     "declaration": true,
     "sourceMap": true,
     "jsx": "react-jsx",
-    "types": ["jest", "@testing-library/jest-dom"],
-    "paths": {
-      "@alakel/*": ["./packages/*/src"]
-    }
+    "types": []
   },
   "include": ["packages/**/*", "apps/**/*"]
 }

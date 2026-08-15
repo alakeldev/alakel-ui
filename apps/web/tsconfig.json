@@ -8,17 +8,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "types": [],
-    "plugins": [{ "name": "next" }],
-    "paths": {
-      "@alakel/*": ["../../packages/*/src"]
-    }
+    "plugins": [{ "name": "next" }]
   },
   "include": [
     "app/**/*",
     "pages/**/*",
     "next-env.d.ts",
-    ".next/types/**/*.ts",
-    "../../packages/*/src/**/*"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

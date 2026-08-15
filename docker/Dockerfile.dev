@@ -9,15 +9,9 @@ WORKDIR /app
 # Step 1: Copy root package files (changes less frequently)
 COPY package.json package-lock.json turbo.json ./
 
-# Step 2: Copy all workspace package.json files
+# Step 2: Copy workspace package.json files
 # This layer caches unless dependencies change
-COPY packages/accordion/package.json ./packages/accordion/
 COPY packages/button/package.json ./packages/button/
-COPY packages/card/package.json ./packages/card/
-COPY packages/carousel/package.json ./packages/carousel/
-COPY packages/input/package.json ./packages/input/
-COPY packages/label/package.json ./packages/label/
-COPY packages/utils/package.json ./packages/utils/
 COPY apps/web/package.json ./apps/web/
 COPY apps/mobile/package.json ./apps/mobile/
 

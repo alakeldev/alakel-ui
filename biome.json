@@ -22,18 +22,6 @@
 			"!**/coverage/**"
 		]
 	},
-	"overrides": [
-		{
-			"includes": ["packages/label/src/Label.tsx"],
-			"linter": {
-				"rules": {
-					"a11y": {
-						"noLabelWithoutControl": "off"
-					}
-				}
-			}
-		}
-	],
 	"formatter": {
 		"enabled": true,
 		"includes": [

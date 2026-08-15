@@ -8,6 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowUnreachableCode": false,
     "noImplicitAny": true,
+    "ignoreDeprecations": "6.0",
     "skipLibCheck": true,
     "noImplicitReturns": true,
     "declaration": true,

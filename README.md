@@ -1,13 +1,13 @@
 <div align="center">
 
-# AKEX
+# Alakel UI
 
 **Accessible · Animated · Independent**
 
-Seven production-ready React UI packages, each published separately under the `@akex` scope.
+Seven production-ready React UI packages, each published separately under the `@alakel` scope.
 Built with TypeScript, Tailwind CSS, and Motion inside a Turborepo monorepo.
 
-[![CI](https://github.com/alakeldev/akex/actions/workflows/ci.yml/badge.svg)](https://github.com/alakeldev/akex/actions/workflows/ci.yml)
+[![CI](https://github.com/alakeldev/alakel-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/alakeldev/alakel-ui/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)](https://react.dev/)
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
@@ -15,7 +15,7 @@ Built with TypeScript, Tailwind CSS, and Motion inside a Turborepo monorepo.
 [![Motion](https://img.shields.io/badge/Motion-12-ff0055?logo=framer&logoColor=white)](https://motion.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
 
-[Website](https://www.akex.app) · [Running Locally](#running-locally) · [Packages](#packages) · [Project Structure](#project-structure) · [Adding a Package](#adding-a-package) · [Testing](#testing) · [Development](#development) · [Contributing](#contributing)
+[Website](https://ui.alakel.eu) · [Running Locally](#running-locally) · [Packages](#packages) · [Project Structure](#project-structure) · [Adding a Package](#adding-a-package) · [Testing](#testing) · [Development](#development) · [Contributing](#contributing)
 
 </div>
 
@@ -23,7 +23,7 @@ Built with TypeScript, Tailwind CSS, and Motion inside a Turborepo monorepo.
 
 ## Public Domain
 
-AKEX uses one permanent public domain: **[www.akex.app](https://www.akex.app)**.
+Alakel UI uses one permanent public domain: **[ui.alakel.eu](https://ui.alakel.eu)**.
 The web documentation is served at the root. Future mobile documentation and browser previews will use paths on the same domain, such as `/mobile`; they do not require another domain or subdomain.
 
 ---
@@ -52,14 +52,14 @@ Make sure the following tools are installed before you begin:
 #### Step 1 — Clone the repository
 
 ```bash
-git clone git@github.com:alakeldev/akex.git
-cd akex
+git clone git@github.com:alakeldev/alakel-ui.git
+cd alakel-ui
 ```
 
 > If you do not have SSH configured, use HTTPS instead:
 > ```bash
-> git clone https://github.com/alakeldev/akex.git
-> cd akex
+> git clone https://github.com/alakeldev/alakel-ui.git
+> cd alakel-ui
 > ```
 
 #### Step 2 — Install all dependencies
@@ -70,7 +70,7 @@ From the **root** of the monorepo, run:
 npm install
 ```
 
-This installs dependencies for the root workspace, all packages (`@akex/*`), and the docs app in a single step via npm workspaces.
+This installs dependencies for the root workspace, all packages (`@alakel/*`), and the docs app in a single step via npm workspaces.
 
 #### Step 3 — Build the packages
 
@@ -98,7 +98,7 @@ npm run dev:web
 
 Open **[http://localhost:3001](http://localhost:3001)** in your browser.
 
-You will see the AKEX component gallery. Click any component card to open its live docs page and interactive playground.
+You will see the Alakel UI component gallery. Click any component card to open its live docs page and interactive playground.
 
 #### Step 6 — (Optional) Watch-build packages during development
 
@@ -119,8 +119,8 @@ Docker runs the docs app in a container with all dependencies pre-installed. No 
 #### Step 1 — Clone the repository
 
 ```bash
-git clone git@github.com:alakeldev/akex.git
-cd akex
+git clone git@github.com:alakeldev/alakel-ui.git
+cd alakel-ui
 ```
 
 #### Step 2 — Build the Docker image
@@ -176,7 +176,7 @@ All four commands should exit with no errors on a clean clone.
 
 | Problem | Solution |
 |---------|----------|
-| `Cannot find module '@akex/button'` | Run `npm run build:packages` — the packages must be built before the app resolves their types |
+| `Cannot find module '@alakel/button'` | Run `npm run build:packages` — the packages must be built before the app resolves their types |
 | `npm install` fails with peer dependency errors | Use `npm install --legacy-peer-deps` |
 | Port 3001 already in use | Stop the conflicting process or change the port in `apps/web/package.json` and `compose.yml` |
 | Docker hot-reload not working | Make sure you are using `npm run docker:start` (not a plain `docker run`); the compose file mounts your source as a volume |
@@ -187,18 +187,18 @@ All four commands should exit with no errors on a clean clone.
 
 ## Packages
 
-Each package is independently versioned and published under the `@akex` scope.
+Each package is independently versioned and published under the `@alakel` scope.
 Full API documentation and live demos are in the **web app** — run `npm run dev:web` and open `http://localhost:3001`.
 
 | Package | Version | Description |
 |---------|---------|-------------|
-| [`@akex/button`](packages/button) | 1.0.0 | Accessible button — 6 variants, 8 sizes, 8 motion animations |
-| [`@akex/label`](packages/label) | 1.0.0 | Accessible label — 8 variants, 4 sizes, 8 motion animations |
-| [`@akex/carousel`](packages/carousel) | 1.0.0 | Animated carousel — 5 transition presets, auto-play, keyboard nav |
-| [`@akex/card`](packages/card) | 1.0.0 | Composable card — 5 variants, 4 motion animations (lift, tilt, glow, pop) |
-| [`@akex/input`](packages/input) | 1.0.0 | Animated input — floating label, focus glow, shake-on-error |
-| [`@akex/accordion`](packages/accordion) | 1.0.0 | Expandable panels — smooth height animation, single & multiple modes |
-| [`@akex/utils`](packages/utils) | 1.0.0 | Shared utilities — `cn` class merger |
+| [`@alakel/button`](packages/button) | 1.0.0 | Accessible button — 6 variants, 8 sizes, 8 motion animations |
+| [`@alakel/label`](packages/label) | 1.0.0 | Accessible label — 8 variants, 4 sizes, 8 motion animations |
+| [`@alakel/carousel`](packages/carousel) | 1.0.0 | Animated carousel — 5 transition presets, auto-play, keyboard nav |
+| [`@alakel/card`](packages/card) | 1.0.0 | Composable card — 5 variants, 4 motion animations (lift, tilt, glow, pop) |
+| [`@alakel/input`](packages/input) | 1.0.0 | Animated input — floating label, focus glow, shake-on-error |
+| [`@alakel/accordion`](packages/accordion) | 1.0.0 | Expandable panels — smooth height animation, single & multiple modes |
+| [`@alakel/utils`](packages/utils) | 1.0.0 | Shared utilities — `cn` class merger |
 
 > Adding a new package? See [Adding a Package](#adding-a-package). Only this table needs updating — nothing else.
 
@@ -219,7 +219,7 @@ npm run dev:web
 ## Project Structure
 
 ```
-akex/
+alakel-ui/
 ├── apps/
 │   ├── web/                   # Docs & playground (Next.js, port 3001)
 │   │   └── app/
@@ -227,14 +227,14 @@ akex/
 │   │       └── <package>/
 │   │           └── page.tsx   # Per-package docs & live demos
 │   └── mobile/                # Reserved for the future Expo showcase
-├── packages/                  # Publishable packages (@akex/*)
+├── packages/                  # Publishable packages (@alakel/*)
 │   ├── <package>/
 │   │   ├── src/
 │   │   │   ├── Component.tsx
 │   │   │   └── index.ts
 │   │   ├── __tests__/
 │   │   │   └── Component.test.tsx
-│   │   ├── package.json       # name: "@akex/<package>"
+│   │   ├── package.json       # name: "@alakel/<package>"
 │   │   └── tsconfig.json      # extends ../tsconfig.base.json
 │   └── tsconfig.base.json     # Shared TypeScript base config
 ├── __mocks__/                 # Jest mocks (motion/react, motion)
@@ -256,7 +256,7 @@ Every package follows the same shape. Create `packages/<name>/` with the structu
 
 ```json
 {
-  "name": "@akex/<name>",
+  "name": "@alakel/<name>",
   "version": "0.1.0",
   "private": false,
   "main": "dist/index.js",

@@ -1,5 +1,5 @@
 {
-  "name": "akex",
+  "name": "alakel-ui",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -21,7 +21,7 @@
     "docker:stop": "docker compose down",
     "docker:rebuild": "npm run docker:stop && npm run docker:build && npm run docker:start",
     "dev": "turbo run dev",
-    "dev:web": "turbo run dev --filter=@akex/web",
+    "dev:web": "turbo run dev --filter=@alakel/web",
     "dev:packages": "turbo run dev --filter='./packages/*'",
     "build": "turbo run build",
     "build:packages": "turbo run build --filter='./packages/*'",

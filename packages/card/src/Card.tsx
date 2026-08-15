@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@akex/utils";
+import { cn } from "@alakel/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, type TargetAndTransition } from "motion/react";
 

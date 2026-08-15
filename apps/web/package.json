@@ -1,5 +1,5 @@
 {
-  "name": "@akex/web",
+  "name": "@alakel/web",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -13,12 +13,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@akex/accordion": "*",
-    "@akex/button": "*",
-    "@akex/card": "*",
-    "@akex/carousel": "*",
-    "@akex/input": "*",
-    "@akex/label": "*",
+    "@alakel/accordion": "*",
+    "@alakel/button": "*",
+    "@alakel/card": "*",
+    "@alakel/carousel": "*",
+    "@alakel/input": "*",
+    "@alakel/label": "*",
     "lucide-react": "^1.16.0",
     "motion": "^12.40.0",
     "react": "^19.2.3",

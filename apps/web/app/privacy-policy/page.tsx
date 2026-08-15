@@ -22,10 +22,10 @@ export default function PrivacyPolicy() {
 								1. Introduction
 							</h2>
 							<p>
-								Welcome to AKEX, a modern React component library. We respect
-								your privacy and are committed to protecting your personal data.
-								This privacy policy will inform you about how we handle your
-								personal data.
+								Welcome to Alakel UI, a modern React component library. We
+								respect your privacy and are committed to protecting your
+								personal data. This privacy policy will inform you about how we
+								handle your personal data.
 							</p>
 						</section>
 

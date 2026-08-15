@@ -1,5 +1,5 @@
-import type { ButtonAnimation } from "@akex/button";
-import { Button } from "@akex/button";
+import type { ButtonAnimation } from "@alakel/button";
+import { Button } from "@alakel/button";
 import Link from "next/link";
 
 // ---------------------------------------------------------------------------
@@ -179,20 +179,20 @@ export default function ButtonPage() {
 						.
 					</p>
 					<code className="text-sm text-purple-400 bg-black/40 px-3 py-1.5 rounded-lg">
-						@akex/button
+						@alakel/button
 					</code>
 				</header>
 
 				{/* Install */}
 				<Section title="Installation">
 					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
-						npm install @akex/button
+						npm install @alakel/button
 					</pre>
 				</Section>
 
 				{/* Usage */}
 				<Section title="Usage">
-					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">{`import { Button } from "@akex/button";
+					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">{`import { Button } from "@alakel/button";
 
 <Button variant="default" size="default">
   Click me

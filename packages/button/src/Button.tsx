@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@akex/utils";
+import { cn } from "@alakel/utils";
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import type { BaseUIEvent } from "@base-ui/react/types";
 import { cva, type VariantProps } from "class-variance-authority";

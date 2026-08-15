@@ -143,8 +143,8 @@ describe("Input – interaction", () => {
 		const user = userEvent.setup();
 		render(<Input aria-label="Name" />);
 		const input = screen.getByRole("textbox");
-		await user.type(input, "Akex");
-		expect(input).toHaveValue("Akex");
+		await user.type(input, "Alakel UI");
+		expect(input).toHaveValue("Alakel UI");
 	});
 });
 

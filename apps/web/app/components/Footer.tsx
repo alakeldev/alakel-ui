@@ -4,10 +4,10 @@ export function Footer() {
 			<p>Built with 💜 using TypeScript, Next.js, React, and Tailwind CSS.</p>
 			<div className="mt-4 flex justify-center">
 				<a
-					href="https://github.com/alakeldev"
+					href="https://github.com/alakeldev/alakel-ui"
 					target="_blank"
 					rel="noopener noreferrer"
-					aria-label="Visit AKEX on GitHub"
+					aria-label="Visit Alakel UI on GitHub"
 					className="text-white hover:text-purple-300 transition-colors"
 				>
 					<svg

@@ -1,10 +1,10 @@
 services:
   # UI Website (Docs with integrated Playground)
-  akex:
+  alakel-ui:
     build:
       context: .
       dockerfile: docker/Dockerfile.dev
-    container_name: akex
+    container_name: alakel-ui
     ports:
       - "3001:3001"
     volumes:

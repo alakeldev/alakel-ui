@@ -10,7 +10,7 @@
     "types": [],
     "plugins": [{ "name": "next" }],
     "paths": {
-      "@akex/*": ["../../packages/*/src"]
+      "@alakel/*": ["../../packages/*/src"]
     }
   },
   "include": [

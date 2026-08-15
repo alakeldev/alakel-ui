@@ -14,11 +14,11 @@ const packages = fs.readdirSync(packagesDir).filter((dir) => {
 });
 
 // Generate transpile packages list
-const transpilePackages = packages.map((pkg) => `@akex/${pkg}`);
+const transpilePackages = packages.map((pkg) => `@alakel/${pkg}`);
 
 // Generate webpack aliases
 const packageAliases = packages.reduce((aliases, pkg) => {
-	aliases[`@akex/${pkg}`] = path.resolve(
+	aliases[`@alakel/${pkg}`] = path.resolve(
 		__dirname,
 		`../../packages/${pkg}/src`,
 	);

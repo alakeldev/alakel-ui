@@ -1,5 +1,5 @@
-import type { LabelAnimation } from "@akex/label";
-import { Label } from "@akex/label";
+import type { LabelAnimation } from "@alakel/label";
+import { Label } from "@alakel/label";
 import Link from "next/link";
 
 // ---------------------------------------------------------------------------
@@ -189,20 +189,20 @@ export default function LabelPage() {
 						.
 					</p>
 					<code className="text-sm text-purple-400 bg-black/40 px-3 py-1.5 rounded-lg">
-						@akex/label
+						@alakel/label
 					</code>
 				</header>
 
 				{/* Installation */}
 				<Section title="Installation">
 					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
-						npm install @akex/label
+						npm install @alakel/label
 					</pre>
 				</Section>
 
 				{/* Usage */}
 				<Section title="Usage">
-					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">{`import { Label } from "@akex/label";
+					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">{`import { Label } from "@alakel/label";
 
 <Label htmlFor="email">Email address</Label>
 <Label variant="success" size="sm">Active</Label>

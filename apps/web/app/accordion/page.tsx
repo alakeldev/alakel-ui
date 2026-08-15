@@ -3,7 +3,7 @@ import {
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
-} from "@akex/accordion";
+} from "@alakel/accordion";
 import Link from "next/link";
 
 // ---------------------------------------------------------------------------
@@ -13,9 +13,9 @@ import Link from "next/link";
 const faqs = [
 	{
 		value: "what",
-		question: "What is Akex?",
+		question: "What is Alakel UI?",
 		answer:
-			"Akex is a monorepo of small, accessible, animated React components published as scoped npm packages.",
+			"Alakel UI is a monorepo of small, accessible, animated React components published as scoped npm packages.",
 	},
 	{
 		value: "styling",
@@ -115,14 +115,14 @@ export default function AccordionPage() {
 						, and full keyboard support.
 					</p>
 					<code className="text-sm text-purple-400 bg-black/40 px-3 py-1.5 rounded-lg">
-						@akex/accordion
+						@alakel/accordion
 					</code>
 				</header>
 
 				{/* Installation */}
 				<Section title="Installation">
 					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
-						npm install @akex/accordion
+						npm install @alakel/accordion
 					</pre>
 				</Section>
 
@@ -133,7 +133,7 @@ export default function AccordionPage() {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "@akex/accordion";
+} from "@alakel/accordion";
 
 <Accordion type="single" defaultValue="a">
   <AccordionItem value="a">

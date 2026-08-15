@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@akex/utils";
+import { cn } from "@alakel/utils";
 import {
 	AnimatePresence,
 	motion,

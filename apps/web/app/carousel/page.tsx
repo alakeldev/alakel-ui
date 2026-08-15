@@ -1,7 +1,7 @@
 "use client";
 
-import type { CarouselAnimation } from "@akex/carousel";
-import { Carousel } from "@akex/carousel";
+import type { CarouselAnimation } from "@alakel/carousel";
+import { Carousel } from "@alakel/carousel";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -15,7 +15,7 @@ const demoSlides = [
 		icon: "⚡",
 		title: "Type-Safe",
 		description: "Built with TypeScript from the ground up for rock-solid DX.",
-		badge: "@akex/carousel",
+		badge: "@alakel/carousel",
 	},
 	{
 		gradient: "from-blue-600 via-cyan-600 to-teal-700",
@@ -242,20 +242,20 @@ export default function CarouselPage() {
 						.
 					</p>
 					<code className="text-sm text-purple-400 bg-black/40 px-3 py-1.5 rounded-lg">
-						@akex/carousel
+						@alakel/carousel
 					</code>
 				</header>
 
 				{/* Installation */}
 				<Section title="Installation">
 					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
-						npm install @akex/carousel
+						npm install @alakel/carousel
 					</pre>
 				</Section>
 
 				{/* Usage */}
 				<Section title="Usage">
-					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">{`import { Carousel } from "@akex/carousel";
+					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">{`import { Carousel } from "@alakel/carousel";
 
 const slides = [
   <div>Slide 1</div>,

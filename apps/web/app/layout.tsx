@@ -3,10 +3,10 @@ import type React from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://www.akex.app"),
-	title: "AKEX - Docs & Playground",
+	metadataBase: new URL("https://ui.alakel.eu"),
+	title: "Alakel UI - Docs & Playground",
 	description:
-		"Accessible, animated React UI components — independently published packages from the AKEX Turborepo monorepo.",
+		"Accessible, animated React UI components — independently published packages from the Alakel UI Turborepo monorepo.",
 };
 
 export const viewport: Viewport = {

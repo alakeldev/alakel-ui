@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const ACTIVE_CLASS = "text-lg text-gray-100 font-semibold";
@@ -18,14 +17,12 @@ export function Header({ active = "home" }: HeaderProps) {
 		>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-22">
-					<Link href="/" className="hover:opacity-80 transition-opacity">
-						<Image
-							src="/images/logo.jpg"
-							alt="AKEX Logo"
-							width={100}
-							height={100}
-							className="rounded-lg"
-						/>
+					<Link
+						href="/"
+						aria-label="Alakel UI home"
+						className="text-2xl font-bold text-white hover:text-purple-300 transition-colors"
+					>
+						Alakel UI
 					</Link>
 
 					<div className="flex items-center space-x-8">

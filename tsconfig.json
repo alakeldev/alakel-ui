@@ -15,7 +15,7 @@
     "jsx": "react-jsx",
     "types": ["jest", "@testing-library/jest-dom"],
     "paths": {
-      "@akex/*": ["./packages/*/src"]
+      "@alakel/*": ["./packages/*/src"]
     }
   },
   "include": ["packages/**/*", "apps/**/*"]

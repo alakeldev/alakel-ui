@@ -1,4 +1,4 @@
-import type { CardAnimation } from "@akex/card";
+import type { CardAnimation } from "@alakel/card";
 import {
 	Card,
 	CardContent,
@@ -6,7 +6,7 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@akex/card";
+} from "@alakel/card";
 import Link from "next/link";
 
 // ---------------------------------------------------------------------------
@@ -147,14 +147,14 @@ export default function CardPage() {
 						, and a full set of header / content / footer parts.
 					</p>
 					<code className="text-sm text-purple-400 bg-black/40 px-3 py-1.5 rounded-lg">
-						@akex/card
+						@alakel/card
 					</code>
 				</header>
 
 				{/* Installation */}
 				<Section title="Installation">
 					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
-						npm install @akex/card
+						npm install @alakel/card
 					</pre>
 				</Section>
 
@@ -167,7 +167,7 @@ export default function CardPage() {
   CardDescription,
   CardContent,
   CardFooter,
-} from "@akex/card";
+} from "@alakel/card";
 
 <Card variant="gradient" animation="lift">
   <CardHeader>

@@ -19,7 +19,7 @@ module.exports = {
   coverageReporters: ['text', 'lcov', 'html'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.cjs'],
   moduleNameMapper: {
-    '^@akex/(.*)$': '<rootDir>/packages/$1/src',
+    '^@alakel/(.*)$': '<rootDir>/packages/$1/src',
     '^motion/react$': '<rootDir>/__mocks__/motion-react.tsx',
     '^motion$': '<rootDir>/__mocks__/motion.ts',
   },

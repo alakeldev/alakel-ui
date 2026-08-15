@@ -1,7 +1,7 @@
-# Publishing `@akex/*` packages to npm
+# Publishing `@alakel/*` packages to npm
 
 This guide walks you through publishing your packages to the **public npm registry**
-so anyone (including your friends) can install them with `npm install @akex/button`.
+so anyone (including your friends) can install them with `npm install @alakel/button`.
 
 Publishing public packages to npm is **100% free**.
 
@@ -21,26 +21,17 @@ Publishing public packages to npm is **100% free**.
 
 ## 1. One-time setup
 
-### Step 1.1 — Create a free npm account
+### Step 1.1 — Secure your npm account
 
-1. Go to <https://www.npmjs.com/signup>.
-2. Create an account. Remember your **username** — your packages live under it.
+1. Sign in at <https://www.npmjs.com/> with an account authorized to publish for Alakel.
+2. Verify the account email address.
 3. **Enable 2FA** (Account Settings → Two-Factor Authentication). npm requires it for publishing.
 
-### Step 1.2 — Claim the `@akex` scope
+### Step 1.2 — Confirm access to the `@alakel` scope
 
-A "scope" is the `@akex` part of `@akex/button`. There are two cases:
-
-- **Option A — Use `@akex` (if available).** Scopes are first-come, first-served.
-  When you first publish a package named `@akex/button`, npm automatically creates
-  the `@akex` scope for your account **if no one else owns it**.
-- **Option B — `@akex` is taken.** Rename the scope to your npm username, e.g.
-  `@yourusername/button`. To do this, change the `"name"` field in every
-  `packages/*/package.json` and the imports in the docs app. (Ask your AI assistant
-  to do a find-and-replace from `@akex/` to `@yourusername/`.)
-
-> Tip: check availability by visiting `https://www.npmjs.com/package/@akex/button`.
-> A 404 means it's free.
+The `@alakel` organization and scope already exist. Only authorized organization
+members can publish packages such as `@alakel/button`. Confirm that your npm
+account appears in the organization's member settings with the required access.
 
 ### Step 1.3 — Log in from your terminal
 
@@ -110,7 +101,7 @@ Confirm the output only lists the `dist/` files and `package.json`
 
 ### Step 3.3 — Publish in the correct order
 
-`@akex/utils` is a dependency of the others, so **publish it first**.
+`@alakel/utils` is a dependency of the others, so **publish it first**.
 
 ```bash
 # 1. Publish the shared utility first
@@ -133,7 +124,7 @@ You'll be asked for your 2FA code each time.
 
 ### Step 3.4 — Verify
 
-Visit `https://www.npmjs.com/package/@akex/button` (and the others).
+Visit `https://www.npmjs.com/package/@alakel/button` (and the others).
 They should now be live.
 
 ---
@@ -154,7 +145,7 @@ npm version patch --workspace=packages/button
 This updates that package's `package.json` version automatically.
 
 > If a package depends on another that you also changed (e.g. you updated
-> `@akex/utils` and want components to require the new version), bump both and
+> `@alakel/utils` and want components to require the new version), bump both and
 > publish `utils` first.
 
 ### Step 4.2 — Re-run the checklist + publish
@@ -171,13 +162,13 @@ npm publish --workspace=packages/button
 Once published, **no special setup is needed**. In any React project they run:
 
 ```bash
-npm install @akex/button
+npm install @alakel/button
 ```
 
 Then use it:
 
 ```tsx
-import { Button } from "@akex/button";
+import { Button } from "@alakel/button";
 
 export default function App() {
   return <Button animation="shimmer">Click me</Button>;
@@ -219,11 +210,11 @@ These settings are **already in place** — listed here so you understand what e
 | `"files": ["dist"]` | each `packages/*/package.json` | Only the built `dist/` folder is uploaded — never your source. |
 | `"main"`, `"module"`, `"types"` | each `packages/*/package.json` | Tells consumers where the CommonJS, ESM, and TypeScript type entry points are. |
 | `"peerDependencies": { react }` | each component package | Consumers bring their own React — avoids duplicate React copies. |
-| `"@akex/utils": "*"` | button/label/carousel deps | Uses the latest published `@akex/utils`. Always publish `utils` first. |
+| `"@alakel/utils": "*"` | button/label/carousel deps | Uses the latest published `@alakel/utils`. Always publish `utils` first. |
 | `tsup ... --dts` | build script | Generates the JS bundles **and** `.d.ts` type definitions. |
 
-> **One thing to know about `"@akex/utils": "*"`:** the `*` means "any version".
-> When a friend installs `@akex/button`, npm pulls the **latest** published
-> `@akex/utils`. This is fine as long as you always publish `@akex/utils` first and
+> **One thing to know about `"@alakel/utils": "*"`:** the `*` means "any version".
+> When a friend installs `@alakel/button`, npm pulls the **latest** published
+> `@alakel/utils`. This is fine as long as you always publish `@alakel/utils` first and
 > keep it backward-compatible. If you ever want stricter guarantees, replace `*`
 > with the exact version (e.g. `"1.0.0"`) before publishing.

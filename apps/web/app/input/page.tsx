@@ -1,6 +1,6 @@
 "use client";
 
-import { Input } from "@akex/input";
+import { Input } from "@alakel/input";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -114,20 +114,20 @@ export default function InputPage() {
 						animation.
 					</p>
 					<code className="text-sm text-purple-400 bg-black/40 px-3 py-1.5 rounded-lg">
-						@akex/input
+						@alakel/input
 					</code>
 				</header>
 
 				{/* Installation */}
 				<Section title="Installation">
 					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
-						npm install @akex/input
+						npm install @alakel/input
 					</pre>
 				</Section>
 
 				{/* Usage */}
 				<Section title="Usage">
-					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">{`import { Input } from "@akex/input";
+					<pre className="bg-black/50 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">{`import { Input } from "@alakel/input";
 
 <Input label="Email" type="email" />
 <Input label="Password" error="Too short" />

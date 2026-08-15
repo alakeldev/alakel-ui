@@ -15,9 +15,16 @@ Built with TypeScript, Tailwind CSS, and Motion inside a Turborepo monorepo.
 [![Motion](https://img.shields.io/badge/Motion-12-ff0055?logo=framer&logoColor=white)](https://motion.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
 
-[Running Locally](#running-locally) · [Packages](#packages) · [Project Structure](#project-structure) · [Adding a Package](#adding-a-package) · [Testing](#testing) · [Development](#development) · [Contributing](#contributing)
+[Website](https://www.akex.app) · [Running Locally](#running-locally) · [Packages](#packages) · [Project Structure](#project-structure) · [Adding a Package](#adding-a-package) · [Testing](#testing) · [Development](#development) · [Contributing](#contributing)
 
 </div>
+
+---
+
+## Public Domain
+
+AKEX uses one permanent public domain: **[www.akex.app](https://www.akex.app)**.
+The web documentation is served at the root. Future mobile documentation and browser previews will use paths on the same domain, such as `/mobile`; they do not require another domain or subdomain.
 
 ---
 
@@ -86,7 +93,7 @@ Lefthook installs `pre-commit` and `pre-push` hooks that run lint, format, type-
 #### Step 5 — Start the docs & playground app
 
 ```bash
-npm run dev:akex
+npm run dev:web
 ```
 
 Open **[http://localhost:3001](http://localhost:3001)** in your browser.
@@ -171,7 +178,7 @@ All four commands should exit with no errors on a clean clone.
 |---------|----------|
 | `Cannot find module '@akex/button'` | Run `npm run build:packages` — the packages must be built before the app resolves their types |
 | `npm install` fails with peer dependency errors | Use `npm install --legacy-peer-deps` |
-| Port 3001 already in use | Stop the conflicting process or change the port in `apps/akex/package.json` and `compose.yml` |
+| Port 3001 already in use | Stop the conflicting process or change the port in `apps/web/package.json` and `compose.yml` |
 | Docker hot-reload not working | Make sure you are using `npm run docker:start` (not a plain `docker run`); the compose file mounts your source as a volume |
 | `lefthook: command not found` | Run `npx lefthook install` from the repo root |
 | Tests fail with `Cannot find module 'motion/react'` | Run `npm install` from the repo root — the mock in `__mocks__/` requires the root dependencies to be installed |
@@ -181,7 +188,7 @@ All four commands should exit with no errors on a clean clone.
 ## Packages
 
 Each package is independently versioned and published under the `@akex` scope.
-Full API documentation and live demos are in the **docs app** — run `npm run dev:akex` and open `http://localhost:3001`.
+Full API documentation and live demos are in the **web app** — run `npm run dev:web` and open `http://localhost:3001`.
 
 | Package | Version | Description |
 |---------|---------|-------------|
@@ -204,7 +211,7 @@ Full API documentation and live demos are in the **docs app** — run `npm run d
 npm install
 
 # Start docs & playground at http://localhost:3001
-npm run dev:akex
+npm run dev:web
 ```
 
 ---
@@ -214,11 +221,12 @@ npm run dev:akex
 ```
 akex/
 ├── apps/
-│   └── akex/                  # Docs & playground (Next.js, port 3001)
-│       └── app/
-│           ├── page.tsx        # Package gallery
-│           └── <package>/
-│               └── page.tsx    # Per-package docs & live demos
+│   ├── web/                   # Docs & playground (Next.js, port 3001)
+│   │   └── app/
+│   │       ├── page.tsx       # Package gallery
+│   │       └── <package>/
+│   │           └── page.tsx   # Per-package docs & live demos
+│   └── mobile/                # Reserved for the future Expo showcase
 ├── packages/                  # Publishable packages (@akex/*)
 │   ├── <package>/
 │   │   ├── src/
@@ -304,7 +312,7 @@ packages/<name>/__tests__/Component.test.tsx
 
 **4. Add a docs page**
 
-Create `apps/akex/app/<name>/page.tsx` — it appears in the gallery automatically.
+Create `apps/web/app/<name>/page.tsx` — it appears in the gallery automatically.
 
 ---
 
@@ -345,7 +353,7 @@ npm run test:coverage --workspace=packages/<name>
 ### Local
 
 ```bash
-npm run dev:akex          # Docs app → http://localhost:3001
+npm run dev:web           # Web app → http://localhost:3001
 npm run dev:packages      # Watch-build all packages in parallel
 ```
 
@@ -440,4 +448,3 @@ npx lefthook run pre-push
 ## License
 
 [MIT](LICENSE)
-

@@ -1,5 +1,5 @@
 {
-  "name": "akex",
+  "name": "@akex/web",
   "version": "1.0.0",
   "private": true,
   "type": "module",

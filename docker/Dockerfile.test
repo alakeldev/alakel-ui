@@ -18,7 +18,8 @@ COPY packages/carousel/package.json ./packages/carousel/
 COPY packages/input/package.json ./packages/input/
 COPY packages/label/package.json ./packages/label/
 COPY packages/utils/package.json ./packages/utils/
-COPY apps/akex/package.json ./apps/akex/
+COPY apps/web/package.json ./apps/web/
+COPY apps/mobile/package.json ./apps/mobile/
 
 # Install dependencies — --ignore-scripts skips git hooks (lefthook)
 RUN npm ci --ignore-scripts

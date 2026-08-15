@@ -7,8 +7,9 @@ dist
 build
 .git
 .gitignore
-.env
-.env.local
+.env*
+.vercel
+.expo
 .DS_Store
 *.log
 coverage

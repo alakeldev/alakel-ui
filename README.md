@@ -4,7 +4,7 @@
 
 A monorepo for building Alakel UI applications and independently maintained UI packages.
 
-[Website](https://ui.alakel.eu) · [License](LICENSE)
+[Website](https://ui.alakel.dev) · [License](LICENSE)
 
 </div>
 
@@ -35,7 +35,11 @@ Every package owns its source code, manifest, README, licence, tests, version, a
 
 Applications consume packages through explicit workspace dependencies. A package can therefore be developed and released without requiring unrelated package versions to change.
 
+Browser packages use Vite library mode and publish ECMAScript modules only. Vite produces the runtime JavaScript bundle, while TypeScript emits the corresponding declaration files. CommonJS files and `require` exports are not part of the package contract. Each package still owns its build configuration and can evolve independently.
+
 ## Development
+
+Use Node.js 24.15 or newer from the Node 24 LTS line and npm 12.0.2.
 
 Install the workspaces:
 
@@ -59,7 +63,7 @@ npm run build
 
 ## Documentation
 
-Project-wide documentation is published at [ui.alakel.eu](https://ui.alakel.eu). Detailed package documentation stays beside its package so it can change with that package independently.
+Project-wide documentation is published at [ui.alakel.dev](https://ui.alakel.dev). Detailed package documentation stays beside its package so it can change with that package independently.
 
 ## License
 

@@ -17,3 +17,7 @@ coverage
 .idea
 README.md
 .github
+lefthook.yml
+**/__tests__
+**/*.test.ts
+**/*.test.tsx

@@ -6,6 +6,7 @@
 			"!**/dist",
 			"!**/build",
 			"!**/.next",
+			"!**/.turbo",
 			"!**/node_modules",
 			"!**/coverage"
 		]
@@ -18,6 +19,7 @@
 			"!**/dist/**",
 			"!**/build/**",
 			"!**/.next/**",
+			"!**/.turbo/**",
 			"!**/node_modules/**",
 			"!**/coverage/**"
 		]
@@ -30,6 +32,7 @@
 			"!**/dist/**",
 			"!**/build/**",
 			"!**/.next/**",
+			"!**/.turbo/**",
 			"!**/node_modules/**",
 			"!**/coverage/**"
 		]

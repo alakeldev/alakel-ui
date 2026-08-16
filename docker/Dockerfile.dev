@@ -1,8 +1,9 @@
 # Development Dockerfile - Optimized for layer caching
-FROM node:22-alpine
+FROM node:24-alpine
 
 # Install system dependencies
 RUN apk add --no-cache libc6-compat
+RUN npm install --global npm@12.0.2
 
 WORKDIR /app
 
@@ -18,7 +19,7 @@ COPY apps/mobile/package.json ./apps/mobile/
 # Step 3: Install dependencies - CACHED unless package.json changes
 # Uses npm cache mount for faster reinstalls
 RUN --mount=type=cache,target=/root/.npm \
-    npm ci --legacy-peer-deps --ignore-scripts
+    npm ci --ignore-scripts
 
 # Step 4: Copy config files
 COPY biome.json tsconfig.json ./

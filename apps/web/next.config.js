@@ -11,8 +11,8 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
-	allowedDevOrigins: ["http://localhost:3001"],
 	experimental: {
+		// Next 16.3.1 cannot capture TypeScript 6's CLI output in this environment.
 		useTypeScriptCli: false,
 	},
 	async headers() {

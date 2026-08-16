@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://ui.alakel.eu"),
+	metadataBase: new URL("https://ui.alakel.dev"),
 	title: "Alakel UI",
 	description: "Alakel UI web application.",
 };

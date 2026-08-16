@@ -12,6 +12,9 @@ const securityHeaders = [
 
 const nextConfig = {
 	allowedDevOrigins: ["http://localhost:3001"],
+	experimental: {
+		useTypeScriptCli: false,
+	},
 	async headers() {
 		return [{ source: "/(.*)", headers: securityHeaders }];
 	},

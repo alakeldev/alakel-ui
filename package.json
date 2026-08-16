@@ -11,7 +11,6 @@
   "scripts": {
     "biome:check": "biome check",
     "biome:fix": "biome check --write",
-    "tsc:check": "turbo run typecheck",
     "docker:build": "docker compose build",
     "docker:start": "docker compose up -d",
     "docker:stop": "docker compose down",
@@ -19,6 +18,7 @@
     "dev": "turbo run dev",
     "dev:web": "turbo run dev --filter=@alakel/web",
     "dev:packages": "turbo run dev --filter='./packages/*'",
+    "tsc:check": "turbo run typecheck",
     "build": "turbo run build",
     "build:packages": "turbo run build --filter='./packages/*'",
     "clean": "turbo run clean && rm -rf node_modules",

@@ -19,15 +19,22 @@ alakel-ui/
 ├── apps/
 │   └── <application>/
 ├── packages/
-│   └── <package>/
+│   ├── web/
+│   │   └── <package>/
+│   ├── native/
+│   │   └── <package>/
+│   └── shared/
+│       └── <package>/
 └── shared configuration
 ```
 
 - `apps/*` contains product applications and documentation experiences.
-- `packages/*` contains isolated UI packages that may be released separately.
+- `packages/web/*` contains independently released browser packages.
+- `packages/native/*` is reserved for independently released React Native packages.
+- `packages/shared/*` is reserved for platform-neutral packages created only when genuine shared contracts emerge.
 - Root configuration coordinates workspaces, builds, type checking, formatting, and deployment.
 
-New workspaces are discovered through the repository's workspace patterns, so this README does not require a package list or component count.
+Package names in this document are represented by `<package>` placeholders. New workspaces are discovered through the repository's `packages/*/*` workspace pattern, so this README does not require a static package list or component count.
 
 ## Workspace conventions
 

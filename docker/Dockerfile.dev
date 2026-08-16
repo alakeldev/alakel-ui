@@ -10,9 +10,9 @@ WORKDIR /app
 # Step 1: Copy root package files (changes less frequently)
 COPY package.json package-lock.json turbo.json ./
 
-# Step 2: Copy workspace package.json files
-# This layer caches unless dependencies change
-COPY packages/button/package.json ./packages/button/
+# Step 2: Copy workspaces required by npm during installation
+# Copy every package category so new package workspaces are discovered automatically
+COPY packages ./packages
 COPY apps/web/package.json ./apps/web/
 COPY apps/mobile/package.json ./apps/mobile/
 
@@ -23,10 +23,8 @@ RUN --mount=type=cache,target=/root/.npm \
 
 # Step 4: Copy config files
 COPY biome.json tsconfig.json ./
-COPY packages/tsconfig.base.json ./packages/
 
-# Step 5: Copy all source code (changes frequently, but deps are cached)
-COPY packages ./packages
+# Step 5: Copy application source code
 COPY apps ./apps
 
 # Step 6: Build packages

@@ -9,7 +9,7 @@
   },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*/*"
   ],
   "scripts": {
     "biome:check": "biome check",
@@ -20,10 +20,10 @@
     "docker:rebuild": "npm run docker:stop && npm run docker:build && npm run docker:start",
     "dev": "turbo run dev",
     "dev:web": "turbo run dev --filter=@alakel/web",
-    "dev:packages": "turbo run dev --filter='./packages/*'",
+    "dev:packages": "turbo run dev --filter='./packages/*/*'",
     "tsc:check": "turbo run typecheck",
     "build": "turbo run build",
-    "build:packages": "turbo run build --filter='./packages/*'",
+    "build:packages": "turbo run build --filter='./packages/*/*'",
     "clean": "turbo run clean && rm -rf node_modules",
     "upgrade:interactive": "npm-check-updates --interactive --workspaces --install never --cooldown 7d --dep prod,dev,optional,peer",
     "prepare": "command -v lefthook > /dev/null 2>&1 && lefthook install || true"

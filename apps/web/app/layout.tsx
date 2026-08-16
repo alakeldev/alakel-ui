@@ -5,6 +5,13 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://ui.alakel.dev"),
 	title: "Alakel UI",
 	description: "Alakel UI web application.",
+	icons: {
+		icon: [
+			{ url: "/favicon.ico" },
+			{ url: "/favicon.png", sizes: "512x512", type: "image/png" },
+		],
+		apple: [{ url: "/favicon.png", sizes: "512x512", type: "image/png" }],
+	},
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

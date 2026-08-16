@@ -68,6 +68,14 @@ npm run tsc:check
 npm run build
 ```
 
+Remove generated dependencies, builds, and caches across the root, applications, and packages:
+
+```bash
+npm run clean
+```
+
+The clean command removes project-local outputs such as `node_modules`, `.next`, `.turbo`, `dist`, `build`, coverage data, TypeScript build caches, and Next.js-generated `next-env.d.ts` files. It skips `.git` and preserves source files, lockfiles, environment files, and deployment configuration. Run `npm install` afterward to restore dependencies.
+
 ## Documentation
 
 Project-wide documentation is published at [ui.alakel.dev](https://ui.alakel.dev). Detailed package documentation stays beside its package so it can change with that package independently.

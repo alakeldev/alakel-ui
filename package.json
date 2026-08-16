@@ -22,11 +22,13 @@
     "build": "turbo run build",
     "build:packages": "turbo run build --filter='./packages/*'",
     "clean": "turbo run clean && rm -rf node_modules",
+    "upgrade:interactive": "npm-check-updates --interactive --workspaces --install never --cooldown 7d --dep prod,dev,optional,peer",
     "prepare": "command -v lefthook > /dev/null 2>&1 && lefthook install || true"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.8",
     "lefthook": "^2.1.10",
+    "npm-check-updates": "23.0.2",
     "turbo": "^2.10.10",
     "typescript": "^6.0.3"
   }

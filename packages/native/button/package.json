@@ -1,0 +1,32 @@
+{
+  "name": "@alakel/react-native-button",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Reserved workspace for the Alakel UI React Native Button component.",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "react-native": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "react-native": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

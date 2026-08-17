@@ -30,7 +30,7 @@ alakel-ui/
 
 - `apps/docs` is the Next.js documentation website for both supported platforms.
 - `packages/web/*` contains independently released browser packages.
-- `packages/native/*` is reserved for independently released React Native packages.
+- `packages/native/*` contains independently released React Native packages.
 - `packages/shared/*` is reserved for platform-neutral packages created only when genuine shared contracts emerge.
 - Root configuration coordinates workspaces, builds, type checking, formatting, and deployment.
 
@@ -43,6 +43,8 @@ Every package owns its source code, manifest, README, licence, tests, version, a
 The documentation application consumes packages through explicit workspace dependencies. A package can therefore be developed, documented, and released without requiring unrelated package versions to change.
 
 Browser packages use Vite library mode and publish ECMAScript modules only. Vite produces the runtime JavaScript bundle, while TypeScript emits the corresponding declaration files. CommonJS files and `require` exports are not part of the package contract. Each package still owns its build configuration and can evolve independently.
+
+React Native packages publish ECMAScript modules and TypeScript declarations without bundling React Native itself. The consuming application's Metro pipeline resolves the package and creates the final application bundle.
 
 ## Development
 

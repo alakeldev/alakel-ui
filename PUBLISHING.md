@@ -29,7 +29,7 @@ Published JavaScript packages are ESM-only:
 The package category determines its build pipeline:
 
 - Browser packages under `packages/web/*` use Vite library mode for runtime output and TypeScript for declarations.
-- React Native packages under `packages/native/*` use the native-compatible pipeline documented by each package when that pipeline is introduced.
+- React Native packages under `packages/native/*` use TypeScript for ESM runtime output and declarations. The consuming application's Metro pipeline creates the final native bundle.
 - Platform-neutral packages under `packages/shared/*` choose the smallest build pipeline compatible with all documented consumers.
 
 Build tools and output paths belong in each package's README and manifest; they are not assumed to be identical across platforms.
@@ -64,4 +64,4 @@ npm publish --workspace=@alakel/example-package
 
 Package publishing requires an npm account authorized to publish under the `@alakel` organization and the account's required two-factor authentication.
 
-Build configuration follows [Vite library mode](https://vite.dev/guide/build.html#library-mode), and package entry points follow [Node.js package exports](https://nodejs.org/api/packages.html#package-entry-points).
+Browser build configuration follows [Vite library mode](https://vite.dev/guide/build.html#library-mode), React Native resolution follows [Metro package exports](https://metrobundler.dev/docs/package-exports/), and package entry points follow [Node.js package exports](https://nodejs.org/api/packages.html#package-entry-points).

@@ -15,9 +15,8 @@ build/
 !.env.example
 !.env.*.example
 
-# Local deployment and mobile tooling
+# Local deployment tooling
 .vercel/
-.expo/
 
 # macOS system files
 .DS_Store

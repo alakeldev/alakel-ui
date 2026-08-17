@@ -1,5 +1,5 @@
 services:
-  # Blank Alakel UI web application
+  # Alakel UI documentation application
   alakel-ui:
     build:
       context: .
@@ -10,5 +10,4 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-      - /app/apps/web/.next
-    command: npm run dev:web
+      - /app/apps/docs/.next

@@ -2,7 +2,7 @@
 
 # Alakel UI
 
-A monorepo for building Alakel UI applications and independently maintained UI packages.
+A monorepo for documenting and independently releasing Alakel UI packages.
 
 [Website](https://ui.alakel.dev) · [License](LICENSE)
 
@@ -10,14 +10,14 @@ A monorepo for building Alakel UI applications and independently maintained UI p
 
 ## About
 
-Alakel UI provides a shared foundation for web and mobile applications while allowing every UI package to evolve, version, and release independently. Each workspace owns its implementation and documentation; the repository root supplies common development and quality tooling.
+Alakel UI provides independently maintained UI packages for web and React Native. This repository contains their shared documentation website, package source code, and development tooling. Mobile applications that consume the packages live in separate repositories.
 
 ## Architecture
 
 ```text
 alakel-ui/
 ├── apps/
-│   └── <application>/
+│   └── docs/
 ├── packages/
 │   ├── web/
 │   │   └── <package>/
@@ -28,19 +28,19 @@ alakel-ui/
 └── shared configuration
 ```
 
-- `apps/*` contains product applications and documentation experiences.
+- `apps/docs` is the Next.js documentation website for both supported platforms.
 - `packages/web/*` contains independently released browser packages.
 - `packages/native/*` is reserved for independently released React Native packages.
 - `packages/shared/*` is reserved for platform-neutral packages created only when genuine shared contracts emerge.
 - Root configuration coordinates workspaces, builds, type checking, formatting, and deployment.
 
-Package names in this document are represented by `<package>` placeholders. New workspaces are discovered through the repository's `packages/*/*` workspace pattern, so this README does not require a static package list or component count.
+The documentation application serves its overview at `/docs`, web guides under `/docs/web`, and React Native guides under `/docs/react-native`. Package names in this document are represented by `<package>` placeholders. New packages are discovered through the repository's `packages/*/*` workspace pattern, so this README does not require a static package list or component count.
 
 ## Workspace conventions
 
 Every package owns its source code, manifest, README, licence, tests, version, and release lifecycle. Package-specific installation instructions and APIs belong in that package's README rather than this root document.
 
-Applications consume packages through explicit workspace dependencies. A package can therefore be developed and released without requiring unrelated package versions to change.
+The documentation application consumes packages through explicit workspace dependencies. A package can therefore be developed, documented, and released without requiring unrelated package versions to change.
 
 Browser packages use Vite library mode and publish ECMAScript modules only. Vite produces the runtime JavaScript bundle, while TypeScript emits the corresponding declaration files. CommonJS files and `require` exports are not part of the package contract. Each package still owns its build configuration and can evolve independently.
 
@@ -54,10 +54,16 @@ Install the workspaces:
 npm install
 ```
 
-Start the web application at <http://localhost:3001>:
+Start the documentation application and package development processes:
 
 ```bash
-npm run dev:web
+npm run dev
+```
+
+Start only the documentation application at <http://localhost:3001>:
+
+```bash
+npm run dev:docs
 ```
 
 Run the repository checks:
@@ -78,7 +84,7 @@ The clean command removes project-local outputs such as `node_modules`, `.next`,
 
 ## Documentation
 
-Project-wide documentation is published at [ui.alakel.dev](https://ui.alakel.dev). Detailed package documentation stays beside its package so it can change with that package independently.
+Project-wide documentation is published at [ui.alakel.dev](https://ui.alakel.dev). Its overview lives under `/docs`, web documentation under `/docs/web`, and React Native documentation under `/docs/react-native`. Detailed package documentation stays beside its package so it can change with that package independently.
 
 ## License
 

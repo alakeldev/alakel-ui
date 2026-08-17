@@ -36,17 +36,5 @@
 			"!**/node_modules/**",
 			"!**/coverage/**"
 		]
-	},
-	"overrides": [
-		{
-			"includes": ["apps/mobile/**"],
-			"linter": {
-				"rules": {
-					"suspicious": {
-						"noConsole": "off"
-					}
-				}
-			}
-		}
-	]
+	}
 }

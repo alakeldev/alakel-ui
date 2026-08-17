@@ -13,8 +13,7 @@ COPY package.json package-lock.json turbo.json ./
 # Step 2: Copy workspaces required by npm during installation
 # Copy every package category so new package workspaces are discovered automatically
 COPY packages ./packages
-COPY apps/web/package.json ./apps/web/
-COPY apps/mobile/package.json ./apps/mobile/
+COPY apps/docs/package.json ./apps/docs/
 
 # Step 3: Install dependencies - CACHED unless package.json changes
 # Uses npm cache mount for faster reinstalls

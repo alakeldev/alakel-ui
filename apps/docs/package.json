@@ -1,8 +1,8 @@
 {
-  "name": "@alakel/web",
+  "name": "@alakel/docs",
   "version": "0.0.0",
   "private": true,
-  "description": "Alakel UI web application.",
+  "description": "Alakel UI documentation for web and React Native packages.",
   "type": "module",
   "engines": {
     "node": ">=24.15.0 <25"

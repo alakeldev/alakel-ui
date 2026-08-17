@@ -3,8 +3,11 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://ui.alakel.dev"),
-	title: "Alakel UI",
-	description: "Alakel UI web application.",
+	title: {
+		default: "Alakel UI",
+		template: "%s | Alakel UI",
+	},
+	description: "Documentation for Alakel UI web and React Native packages.",
 	icons: {
 		icon: [
 			{ url: "/favicon.ico" },

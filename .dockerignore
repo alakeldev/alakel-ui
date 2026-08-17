@@ -9,7 +9,6 @@ build
 .gitignore
 .env*
 .vercel
-.expo
 .DS_Store
 *.log
 coverage

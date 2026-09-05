@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ReactNativeContent } from "../_components/react-native/react-native-content";
+import { ReactNativeContent } from "../_components/react-native/ReactNativeContent";
 
 export const metadata: Metadata = {
 	title: "React Native documentation",

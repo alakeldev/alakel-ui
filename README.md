@@ -34,7 +34,7 @@ alakel-ui/
 - `packages/shared/*` is reserved for platform-neutral packages created only when genuine shared contracts emerge.
 - Root configuration coordinates workspaces, builds, type checking, formatting, and deployment.
 
-The documentation application serves its overview at `/docs`, web guides under `/docs/web`, and React Native guides under `/docs/react-native`. Package names in this document are represented by `<package>` placeholders. New packages are discovered through the repository's `packages/*/*` workspace pattern, so this README does not require a static package list or component count.
+The documentation application serves its platform-neutral overview at `/`, web guides under `/web`, and React Native guides under `/react-native`. These are sections of one documentation product and intentionally share one application, layout, navigation system, and deployment. Package names in this document are represented by `<package>` placeholders. New packages are discovered through the repository's `packages/*/*` workspace pattern, so this README does not require a static package list or component count.
 
 ## Workspace conventions
 
@@ -86,7 +86,7 @@ The clean command removes project-local outputs such as `node_modules`, `.next`,
 
 ## Documentation
 
-Project-wide documentation is published at [ui.alakel.dev](https://ui.alakel.dev). Its overview lives under `/docs`, web documentation under `/docs/web`, and React Native documentation under `/docs/react-native`. Detailed package documentation stays beside its package so it can change with that package independently.
+Project-wide documentation is published at [ui.alakel.dev](https://ui.alakel.dev). Its overview lives at `/`, web documentation under `/web`, and React Native documentation under `/react-native`. Detailed package documentation stays beside its package so it can change with that package independently.
 
 ## License
 

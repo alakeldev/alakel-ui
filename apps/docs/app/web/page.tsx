@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { WebContent } from "../_components/web/web-content";
 
 export const metadata: Metadata = {
 	title: "Web documentation",
@@ -6,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function WebDocumentationPage() {
-	return null;
+	return <WebContent />;
 }

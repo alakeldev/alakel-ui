@@ -9,8 +9,9 @@ export function WebContent() {
 					Sections for modern websites
 				</h1>
 				<p className="mx-auto mt-5 max-w-2xl text-base text-neutral-300 leading-7 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl">
-					Explore responsive navigation, animated heroes, carousels, interactive
-					cards, footers, and complete sections with a distinctive visual style.
+					Explore a growing collection of responsive interface experiences
+					designed with thoughtful interaction, expressive visuals, and polished
+					motion.
 				</p>
 			</div>
 		</div>

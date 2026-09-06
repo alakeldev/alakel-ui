@@ -10,7 +10,7 @@ A design-led UI framework for independently released interface experiences.
 
 ## About
 
-Alakel UI provides polished, responsive, and animated interface sections for web and React Native. Instead of duplicating generic low-level primitives, its public packages focus on complete experiences such as navigation, carousels, interactive cards, heroes, footers, and composed content sections.
+Alakel UI provides a growing collection of polished, responsive, and animated interface experiences for web and React Native. Instead of duplicating generic low-level primitives, its public packages focus on complete, expressive compositions that help products develop a distinctive identity.
 
 Each experience combines an original visual direction with thoughtful interaction and a focused API. Web packages may compose established accessibility primitives and animation libraries while React Native packages use platform-appropriate foundations. Small elements such as buttons, badges, and text styles remain internal unless they develop enough distinct value to justify a public package.
 

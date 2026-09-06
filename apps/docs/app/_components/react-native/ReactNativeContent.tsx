@@ -9,8 +9,8 @@ export function ReactNativeContent() {
 					Sections for React Native
 				</h1>
 				<p className="mx-auto mt-5 max-w-2xl text-base text-neutral-300 leading-7 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl">
-					Explore app headers, carousels, interactive content layouts, and
-					complete sections designed around native gestures and motion.
+					Explore a growing collection of native interface experiences designed
+					around touch, movement, and thoughtful interaction.
 				</p>
 			</div>
 		</div>

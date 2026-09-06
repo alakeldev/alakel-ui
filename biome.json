@@ -11,6 +11,11 @@
 			"!**/coverage"
 		]
 	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
 	"linter": {
 		"enabled": true,
 		"includes": [

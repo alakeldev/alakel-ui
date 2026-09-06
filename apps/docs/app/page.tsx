@@ -4,55 +4,57 @@ const platforms = [
 	{
 		href: "/web",
 		title: "Web",
-		description: "Explore packages designed for browser applications.",
+		description: "Explore independently released packages for the browser.",
 	},
 	{
 		href: "/react-native",
 		title: "React Native",
-		description: "Explore packages designed for React Native applications.",
+		description: "Explore independently released packages for React Native.",
 	},
 ] as const;
 
 export default function HomePage() {
 	return (
-		<div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-			<section className="max-w-3xl">
-				<p className="font-medium text-slate-500 text-sm uppercase tracking-widest">
-					Documentation
-				</p>
-				<h1 className="mt-4 font-semibold text-4xl text-slate-950 tracking-tight sm:text-6xl">
-					Build with Alakel UI
-				</h1>
-				<p className="mt-6 text-lg text-slate-600 leading-8">
-					Alakel UI provides independently maintained packages with focused
-					APIs, documentation, and release lifecycles.
-				</p>
-			</section>
+		<div className="mx-auto flex w-full max-w-6xl flex-1 items-center px-4 py-12 text-center sm:px-6 sm:py-20 lg:px-8 lg:py-28">
+			<div className="w-full">
+				<section className="mx-auto max-w-3xl">
+					<h1 className="font-semibold text-4xl text-brand tracking-tight sm:text-6xl lg:text-7xl">
+						Build with Alakel UI
+					</h1>
+					<p className="mt-5 text-base text-neutral-300 leading-7 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl">
+						A modern, flexible UI framework designed to help everyone build
+						consistent experiences across Web and React Native.
+					</p>
+				</section>
 
-			<section aria-labelledby="platforms-heading" className="mt-16">
-				<h2
-					className="font-semibold text-2xl text-slate-950"
-					id="platforms-heading"
+				<section
+					aria-labelledby="platforms-heading"
+					className="mt-12 sm:mt-16 lg:mt-20"
 				>
-					Choose a platform
-				</h2>
-				<div className="mt-6 grid gap-4 md:grid-cols-2">
-					{platforms.map((platform) => (
-						<Link
-							className="rounded-xl border border-slate-200 p-6 transition-colors hover:border-slate-400 hover:bg-slate-50"
-							href={platform.href}
-							key={platform.href}
-						>
-							<h3 className="font-semibold text-slate-950 text-xl">
-								{platform.title}
-							</h3>
-							<p className="mt-2 text-slate-600 leading-7">
-								{platform.description}
-							</p>
-						</Link>
-					))}
-				</div>
-			</section>
+					<h2
+						className="font-semibold text-white text-xl sm:text-2xl lg:text-3xl"
+						id="platforms-heading"
+					>
+						Choose a platform
+					</h2>
+					<div className="mt-5 grid gap-4 sm:mt-6 sm:gap-6 md:grid-cols-2">
+						{platforms.map((platform) => (
+							<Link
+								className="rounded-xl border border-brand bg-neutral-950/80 p-5 transition-colors hover:bg-brand/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:p-6 lg:p-8"
+								href={platform.href}
+								key={platform.href}
+							>
+								<h3 className="font-semibold text-lg text-white sm:text-xl lg:text-2xl">
+									{platform.title}
+								</h3>
+								<p className="mt-2 text-neutral-300 text-sm leading-6 sm:text-base sm:leading-7 lg:text-lg">
+									{platform.description}
+								</p>
+							</Link>
+						))}
+					</div>
+				</section>
+			</div>
 		</div>
 	);
 }

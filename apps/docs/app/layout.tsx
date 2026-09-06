@@ -1,8 +1,15 @@
 import "./global.css";
 import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { MainFooter } from "./_components/MainFooter";
 import { MainHeader } from "./_components/MainHeader";
+import { ParticlesBackground } from "./_components/ParticlesBackground";
+
+const spaceGrotesk = Space_Grotesk({
+	display: "swap",
+	subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://ui.alakel.dev"),
@@ -23,10 +30,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="en">
-			<body className="flex min-h-screen flex-col bg-white text-slate-950 antialiased">
-				<MainHeader />
-				<main className="flex flex-1">{children}</main>
-				<MainFooter />
+			<body
+				className={`${spaceGrotesk.className} bg-black text-white antialiased`}
+			>
+				<ParticlesBackground />
+				<div className="relative z-10 flex min-h-screen flex-col">
+					<MainHeader />
+					<main className="flex flex-1">{children}</main>
+					<MainFooter />
+				</div>
 			</body>
 		</html>
 	);

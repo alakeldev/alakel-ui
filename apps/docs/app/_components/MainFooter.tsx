@@ -1,8 +1,5 @@
 import Link from "next/link";
 
-const footerLinkClass =
-	"flex h-9 w-32 items-center justify-center gap-2 rounded-sm px-2 font-medium text-brand transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-10 sm:w-36 lg:h-11";
-
 export function MainFooter() {
 	return (
 		<footer className="flex min-h-28 w-full items-center justify-center border-neutral-800 border-t bg-black sm:min-h-20 lg:min-h-24">
@@ -31,7 +28,7 @@ export function MainFooter() {
 				>
 					<a
 						aria-label="View Alakel UI on GitHub"
-						className={footerLinkClass}
+						className="flex h-9 w-32 items-center justify-center gap-2 rounded-sm px-2 font-medium text-brand transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-10 sm:w-36 lg:h-11"
 						href="https://github.com/alakeldev/alakel-ui"
 						rel="noreferrer"
 						target="_blank"
@@ -47,7 +44,7 @@ export function MainFooter() {
 						<span>GitHub</span>
 					</a>
 					<a
-						className={footerLinkClass}
+						className="flex h-9 w-32 items-center justify-center gap-2 rounded-sm px-2 font-medium text-brand transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-10 sm:w-36 lg:h-11"
 						href="https://alakel.dev"
 						rel="noreferrer"
 						target="_blank"

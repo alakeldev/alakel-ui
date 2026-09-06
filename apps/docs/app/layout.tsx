@@ -17,7 +17,8 @@ export const metadata: Metadata = {
 		default: "Alakel UI",
 		template: "%s | Alakel UI",
 	},
-	description: "Documentation for Alakel UI packages.",
+	description:
+		"Design-led, animated interface sections for Web and React Native.",
 	icons: {
 		icon: [
 			{ url: "/favicon.ico" },

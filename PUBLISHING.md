@@ -2,21 +2,24 @@
 
 Every publishable workspace under `packages/*/*` is versioned and released independently under the `@alakel` npm scope. New package workspaces start at version `0.0.0` with `"private": true` so they cannot be published accidentally.
 
-Do not publish a package until its implementation, public API, tests, documentation, and licence contents are complete. Package-specific release notes and compatibility requirements belong in that package's README.
+Public packages should provide a meaningful standalone interface experience, such as navigation, a carousel, or an interaction-rich section. Generic primitives and package-specific utilities should remain private unless they offer distinct public value and a stable API.
+
+Do not publish a package until its design purpose, implementation, public API, tests, documentation, accessibility behavior, reduced-motion behavior, and licence contents are complete. Package-specific release notes and compatibility requirements belong in that package's README.
 
 ## Prepare the first release
 
 Before the first release:
 
-1. Implement and document the component.
-2. Add and run its tests.
-3. Confirm all runtime dependencies have compatible licences.
-4. Set a real initial version, normally `0.1.0` while the API is experimental.
-5. Change `"private"` to `false`.
-6. Add `"publishConfig": { "access": "public" }`.
-7. Add the final `author`, `repository`, `homepage`, and `bugs` metadata.
-8. Confirm the package contains its `LICENSE`, `README.md`, compiled files, and type declarations.
-9. Confirm runtime frameworks and libraries—such as React, React Native, Radix, or Motion—are declared with the appropriate peer dependency ranges and are not bundled into the package unintentionally.
+1. Confirm the section or component solves a distinct problem that warrants an independent package.
+2. Implement and document its supported styles, composition model, and customization API.
+3. Test behavior, accessibility, responsiveness, and reduced-motion support.
+4. Confirm all runtime dependencies have compatible licences.
+5. Set a real initial version, normally `0.1.0` while the API is experimental.
+6. Change `"private"` to `false`.
+7. Add `"publishConfig": { "access": "public" }`.
+8. Add the final `author`, `repository`, `homepage`, and `bugs` metadata.
+9. Confirm the package contains its `LICENSE`, `README.md`, compiled files, and type declarations.
+10. Confirm runtime frameworks and libraries—such as React, React Native, Radix, or Motion—are declared with the appropriate peer dependency ranges and are not bundled into the package unintentionally.
 
 ## Distribution contract
 

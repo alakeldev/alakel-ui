@@ -2,7 +2,7 @@
 
 # Alakel UI
 
-A monorepo for documenting and independently releasing Alakel UI packages.
+A design-led UI framework for independently released interface experiences.
 
 [Website](https://ui.alakel.dev) · [License](LICENSE)
 
@@ -10,7 +10,9 @@ A monorepo for documenting and independently releasing Alakel UI packages.
 
 ## About
 
-Alakel UI provides independently maintained UI packages for web and React Native. This repository contains their shared documentation website, package source code, and development tooling. Mobile applications that consume the packages live in separate repositories.
+Alakel UI provides polished, responsive, and animated interface sections for web and React Native. Instead of duplicating generic low-level primitives, its public packages focus on complete experiences such as navigation, carousels, interactive cards, heroes, footers, and composed content sections.
+
+Each experience combines an original visual direction with thoughtful interaction and a focused API. Web packages may compose established accessibility primitives and animation libraries while React Native packages use platform-appropriate foundations. Small elements such as buttons, badges, and text styles remain internal unless they develop enough distinct value to justify a public package.
 
 ## Architecture
 
@@ -29,20 +31,29 @@ alakel-ui/
 ```
 
 - `apps/docs` is the Next.js documentation website for both supported platforms.
-- `packages/web/*` contains independently released browser packages.
-- `packages/native/*` contains independently released React Native packages.
+- `packages/web/*` contains independently released sections and interaction-rich components for websites.
+- `packages/native/*` contains independently released sections and interaction patterns for React Native.
 - `packages/shared/*` is reserved for platform-neutral packages created only when genuine shared contracts emerge.
 - Root configuration coordinates workspaces, builds, type checking, formatting, and deployment.
 
-The documentation application serves its platform-neutral overview at `/`, web guides under `/web`, and React Native guides under `/react-native`. These are sections of one documentation product and intentionally share one application, layout, navigation system, and deployment. Package names in this document are represented by `<package>` placeholders. New packages are discovered through the repository's `packages/*/*` workspace pattern, so this README does not require a static package list or component count.
+The documentation application serves its platform-neutral overview at `/`, web experiences under `/web`, and React Native experiences under `/react-native`. These are sections of one documentation product and intentionally share one application, layout, navigation system, and deployment. Package names in this document are represented by `<package>` placeholders. New packages are discovered through the repository's `packages/*/*` workspace pattern, so this README does not require a static package list or section count.
+
+## Product principles
+
+- **Complete experiences over primitive duplication.** Public releases solve meaningful interface problems rather than recreating generic buttons, badges, or typography.
+- **A recognizable design voice.** Every section should carry a deliberate Alakel UI visual style while remaining adaptable to a product's brand.
+- **Purposeful motion.** Animation should clarify state, hierarchy, and interaction without distracting from content or ignoring reduced-motion preferences.
+- **Responsive and accessible foundations.** Keyboard behavior, focus management, semantics, touch interaction, and screen size are part of the component API.
+- **Platform-appropriate implementation.** Web and React Native packages can share design intent without forcing the same runtime or implementation onto both platforms.
+- **Useful package boundaries.** Navigation and carousels can justify independent packages; related visual section variants should evolve together rather than becoming many tiny packages.
 
 ## Workspace conventions
 
-Every package owns its source code, manifest, README, licence, tests, version, and release lifecycle. Package-specific installation instructions and APIs belong in that package's README rather than this root document.
+Every public package owns its source code, manifest, README, licence, tests, version, and release lifecycle. Package-specific installation instructions and APIs belong in that package's README rather than this root document. Private workspaces may hold experiments or internal foundations without becoming part of the public framework.
 
 The documentation application consumes packages through explicit workspace dependencies. A package can therefore be developed, documented, and released without requiring unrelated package versions to change.
 
-Browser packages use Vite library mode and publish ECMAScript modules only. Vite produces the runtime JavaScript bundle, while TypeScript emits the corresponding declaration files. CommonJS files and `require` exports are not part of the package contract. Each package still owns its build configuration and can evolve independently.
+Browser packages use Vite library mode and publish ECMAScript modules only. Vite produces the runtime JavaScript bundle, while TypeScript emits the corresponding declaration files. CommonJS files and `require` exports are not part of the package contract. Libraries used for accessibility or animation must remain replaceable implementation details unless their APIs are intentionally exposed.
 
 React Native packages publish ECMAScript modules and TypeScript declarations without bundling React Native itself. The consuming application's Metro pipeline resolves the package and creates the final application bundle.
 
@@ -86,7 +97,7 @@ The clean command removes project-local outputs such as `node_modules`, `.next`,
 
 ## Documentation
 
-Project-wide documentation is published at [ui.alakel.dev](https://ui.alakel.dev). Its overview lives at `/`, web documentation under `/web`, and React Native documentation under `/react-native`. Detailed package documentation stays beside its package so it can change with that package independently.
+Project-wide documentation is published at [ui.alakel.dev](https://ui.alakel.dev). Its overview lives at `/`, web experiences under `/web`, and React Native experiences under `/react-native`. Detailed package documentation stays beside its package so each section and interaction pattern can evolve independently.
 
 ## License
 

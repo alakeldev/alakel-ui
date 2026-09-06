@@ -1,17 +1,15 @@
 {
-  "name": "@alakel/react-native-button",
+  "name": "@alakel/navbar",
   "version": "0.0.0",
   "private": true,
-  "description": "Reserved workspace for the Alakel UI React Native Button component.",
+  "description": "Private workspace for the first Alakel UI animated web navbar.",
   "type": "module",
   "license": "MIT",
   "main": "./dist/index.js",
-  "react-native": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "react-native": "./dist/index.js",
       "import": "./dist/index.js"
     },
     "./package.json": "./package.json"
@@ -19,14 +17,17 @@
   "files": [
     "dist"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch --preserveWatchOutput",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "dev": "vite build --watch",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vite": "^8.2.1"
   }
 }

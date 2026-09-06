@@ -4,12 +4,14 @@ const platforms = [
 	{
 		href: "/web",
 		title: "Web",
-		description: "Explore independently released packages for the browser.",
+		description:
+			"Explore responsive navigation, heroes, carousels, card layouts, and sections with polished motion.",
 	},
 	{
 		href: "/react-native",
 		title: "React Native",
-		description: "Explore independently released packages for React Native.",
+		description:
+			"Explore polished mobile sections and interaction patterns designed for native experiences.",
 	},
 ] as const;
 
@@ -19,11 +21,11 @@ export default function HomePage() {
 			<div className="w-full">
 				<section className="mx-auto max-w-3xl">
 					<h1 className="font-semibold text-4xl text-brand tracking-tight sm:text-6xl lg:text-7xl">
-						Build with Alakel UI
+						Build distinctive interfaces
 					</h1>
 					<p className="mt-5 text-base text-neutral-300 leading-7 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl">
-						A modern, flexible UI framework designed to help everyone build
-						consistent experiences across Web and React Native.
+						Alakel UI is a design-led framework of responsive, animated sections
+						for creating polished Web and React Native experiences.
 					</p>
 				</section>
 

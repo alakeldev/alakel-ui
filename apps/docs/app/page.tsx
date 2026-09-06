@@ -5,13 +5,13 @@ const platforms = [
 		href: "/web",
 		title: "Web",
 		description:
-			"Explore a growing collection of responsive interface experiences with distinctive design and polished motion.",
+			"Explore a growing collection of responsive sections for modern websites, shaped by distinctive design and polished motion.",
 	},
 	{
 		href: "/react-native",
 		title: "React Native",
 		description:
-			"Explore a growing collection of native interface experiences shaped by thoughtful interaction and motion.",
+			"Explore a growing collection of polished sections for mobile apps built with React Native.",
 	},
 ] as const;
 
@@ -24,8 +24,9 @@ export default function HomePage() {
 						Build distinctive interfaces
 					</h1>
 					<p className="mx-auto mt-5 max-w-3xl text-base text-neutral-300 leading-7 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl">
-						Alakel UI is a design-led framework of responsive, animated sections
-						for creating polished Web and React Native experiences.
+						Alakel UI is a design-led framework of responsive, animated
+						interface sections for modern websites and mobile apps built with
+						React Native.
 					</p>
 				</section>
 

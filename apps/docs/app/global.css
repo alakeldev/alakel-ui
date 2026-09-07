@@ -3,3 +3,8 @@
 @theme {
 	--color-brand: #525bb8;
 }
+
+::selection {
+	background-color: var(--color-brand);
+	color: white;
+}

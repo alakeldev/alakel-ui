@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function WebContent() {
 	return (
 		<div className="mx-auto flex w-full max-w-7xl flex-1 items-center justify-center px-4 py-12 text-center sm:px-6 sm:py-20 lg:px-8 lg:py-28">
@@ -13,6 +15,12 @@ export function WebContent() {
 					designed with thoughtful interaction, expressive visuals, and polished
 					motion.
 				</p>
+				<Link
+					className="mt-8 inline-flex rounded-lg border border-brand px-5 py-3 font-medium text-sm text-white transition-colors hover:bg-brand/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:text-base"
+					href="/web/navbar"
+				>
+					Explore the Navbar
+				</Link>
 			</div>
 		</div>
 	);

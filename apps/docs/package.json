@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@alakel/navbar": "1.0.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@tsparticles/engine": "^4.4.0",
     "@tsparticles/nextjs": "^4.4.0",

@@ -1,4 +1,5 @@
 import "./global.css";
+import "@alakel/navbar/styles.css";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";

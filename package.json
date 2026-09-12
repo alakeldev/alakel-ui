@@ -21,6 +21,7 @@
     "dev": "turbo run dev",
     "dev:docs": "turbo run dev --filter=@alakel/docs",
     "dev:packages": "turbo run dev --filter='./packages/*/*'",
+    "test": "turbo run test",
     "tsc:check": "turbo run typecheck",
     "build": "turbo run build",
     "build:packages": "turbo run build --filter='./packages/*/*'",

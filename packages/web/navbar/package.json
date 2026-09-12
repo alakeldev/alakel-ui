@@ -1,17 +1,45 @@
 {
   "name": "@alakel/navbar",
-  "version": "0.0.0",
-  "private": true,
-  "description": "Private workspace for the first Alakel UI animated web navbar.",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A responsive, accessible, and animated React navbar for modern web interfaces.",
   "type": "module",
   "license": "MIT",
+  "author": {
+    "name": "Abdullah Alakel",
+    "url": "https://alakel.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alakeldev/alakel-ui.git",
+    "directory": "packages/web/navbar"
+  },
+  "homepage": "https://ui.alakel.dev/web",
+  "bugs": {
+    "url": "https://github.com/alakeldev/alakel-ui/issues"
+  },
+  "keywords": [
+    "react",
+    "navbar",
+    "navigation",
+    "responsive",
+    "accessible",
+    "animation",
+    "radix-ui",
+    "motion"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
+  "style": "./dist/styles.css",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./styles.css": "./dist/styles.css",
     "./package.json": "./package.json"
   },
   "files": [
@@ -21,13 +49,30 @@
     "**/*.css"
   ],
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly",
+    "build": "vite build && tsc --project tsconfig.build.json",
     "dev": "vite build --watch",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run test && npm run typecheck && npm run build",
     "clean": "rm -rf dist"
   },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@radix-ui/react-navigation-menu": "^1.2.22",
+    "motion": "^13.2.0"
+  },
   "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "jsdom": "^30.0.1",
     "typescript": "^6.0.3",
-    "vite": "^8.2.1"
+    "vite": "^8.2.1",
+    "vitest": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0 <20",
+    "react-dom": ">=18.2.0 <20"
   }
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BackLink } from "../../_components/BackLink";
 import { NavbarDemo } from "./NavbarDemo";
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 export default function NavbarPage() {
 	return (
 		<div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+			<BackLink href="/web" label="Back to Web" />
 			<div className="mx-auto mb-10 max-w-3xl text-center">
 				<p className="font-medium text-brand text-sm uppercase tracking-widest">
 					Web package preview
